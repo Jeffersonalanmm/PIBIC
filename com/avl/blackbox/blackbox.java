@@ -1,14 +1,12 @@
-package com.avl;
-
 class Node {
     int key, height;
     Node left, right;
    
     public Node(int d) {
-    key = d;
-    height = 1;
+        key = d;
+        height = 1;
     }
-   }
+}
    
    class BlackBox {
     Node root;
@@ -119,4 +117,16 @@ class Node {
     Node getAVLTree() {
     return root;
     }
+    public static void main(String[] args) {
+        // Criar uma instância da árvore AVL
+        BlackBox blackBox = new BlackBox();
+
+        // Inserir 1000 nós na árvore AVL
+        for (int i = 1; i <= 1000; i++) {
+            blackBox.root = blackBox.insert(blackBox.root, i);
+        }
+
+        System.out.println("Árvore AVL com 1000 nós foi criada com sucesso!");
+    }
+
    }

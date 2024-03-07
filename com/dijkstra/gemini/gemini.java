@@ -2,7 +2,7 @@ package com.dijkstra;
 
 import java.util.*;
 
-public class googleBard {
+public class gemini {
 
     static class Node {
         int node;
