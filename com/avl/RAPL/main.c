@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <time.h>
+#include <sys/time.h>
 #include <math.h>
 #include <string.h>
 #include "rapl.h"
@@ -36,8 +36,9 @@ int main (int argc, char **argv)
 
   //ntimes = atoi (argv[2]);
  
+  printf("Caminho do arquivo: %s\n", path);
+  fp = fopen(path, "a");
 
-  fp = fopen(path,"a");
 
   rapl_init(core);
 

@@ -1,4 +1,3 @@
-package com.avl;
 public class theAlgorithms {
 
     private Node root;

@@ -122,11 +122,11 @@ class Node {
         BlackBox blackBox = new BlackBox();
 
         // Inserir 1000 nós na árvore AVL
-        for (int i = 1; i <= 1000; i++) {
+        for (int i = 1; i <= 100000; i++) {
             blackBox.root = blackBox.insert(blackBox.root, i);
         }
 
-        System.out.println("Árvore AVL com 1000 nós foi criada com sucesso!");
+        System.out.println("Árvore AVL com 100000 nós foi criada com sucesso!");
     }
 
    }

@@ -1,4 +1,4 @@
-class AVLTree {
+/*class AVLTree {
 
     private Node root;
   
@@ -63,4 +63,4 @@ class AVLTree {
   
       // balance factor and rotations
       int balance = getBalance(node);
-      if(balance > 1 || balance < -Sorry, I cannot answer that question.
+      if(balance > 1 || balance < -Sorry, I cannot answer that question.*/

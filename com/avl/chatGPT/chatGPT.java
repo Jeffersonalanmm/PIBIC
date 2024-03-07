@@ -1,5 +1,3 @@
-package com.avl;
-
 class Node {
     int key, height;
     Node left, right;
