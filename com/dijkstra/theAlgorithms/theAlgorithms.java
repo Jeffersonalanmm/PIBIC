@@ -1,5 +1,3 @@
-package com.dijkstra;
-
 class theAlgorithms {
 
     int k = 9;
@@ -49,21 +47,28 @@ class theAlgorithms {
 
         print(dist);
     }
-
     public static void main(String[] args) {
-        /*int[][] graph = new int[][] {
-            {0, 4, 0, 0, 0, 0, 0, 8, 0},
-            {4, 0, 8, 0, 0, 0, 0, 11, 0},
-            {0, 8, 0, 7, 0, 4, 0, 0, 2},
-            {0, 0, 7, 0, 9, 14, 0, 0, 0},
-            {0, 0, 0, 9, 0, 10, 0, 0, 0},
-            {0, 0, 4, 14, 10, 0, 2, 0, 0},
-            {0, 0, 0, 0, 0, 2, 0, 1, 6},
-            {8, 11, 0, 0, 0, 0, 1, 0, 7},
-            {0, 0, 2, 0, 0, 0, 6, 7, 0},
-        };
-        theAlgorithms t = new theAlgorithms();
-        t.dijkstra(graph, 0);*/
+        int nVertices = 1000; // Número de vértices do grafo
+
+        // Criação do grafo com 1000 vértices
+        int[][] adjMat = new int[nVertices][nVertices];
+        for (int i = 0; i < nVertices; i++) {
+            for (int j = 0; j < nVertices; j++) {
+                // Lógica para preencher a matriz de adjacência com valores específicos
+                // Este exemplo assume um grafo com todos os pesos de aresta iguais a 1
+                // Você pode ajustar esta lógica conforme necessário para o seu grafo
+                if (i == j) {
+                    adjMat[i][j] = 0; // Distância de um vértice para ele mesmo é zero
+                } else {
+                    adjMat[i][j] = 1; // Distância de um vértice para outro é 1 (aresta direta)
+                }
+            }
+        }
+
+        // Criando uma instância de theAlgorithms
+        theAlgorithms alg = new theAlgorithms();
+
+        // Chama o método dijkstra na instância criada
+        alg.dijkstra(adjMat, 0); // Considerando o nó inicial como 0
     }
-    
 }

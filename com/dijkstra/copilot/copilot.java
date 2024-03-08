@@ -1,4 +1,3 @@
-package com.dijkstra;
 import java.util.*;
 
 class Node implements Comparator<Node> {
@@ -85,4 +84,31 @@ public class copilot {
             }
         }
     }
+
+    public static void main(String[] args) {
+        int V = 1000; // Número de vértices do grafo
+
+        // Criação do grafo com 1000 vértices
+        List<List<Node>> adj = new ArrayList<>(V);
+        for (int i = 0; i < V; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        // Preenchendo o grafo com arestas e pesos
+        // Este exemplo assume um grafo completo com todos os pesos de aresta iguais a 1
+        // Você pode ajustar esta lógica conforme necessário para o seu grafo
+        for (int i = 0; i < V; i++) {
+            for (int j = i + 1; j < V; j++) {
+                adj.get(i).add(new Node(j, 1)); // Aresta direta de i para j com peso 1
+                adj.get(j).add(new Node(i, 1)); // Aresta direta de j para i com peso 1
+            }
+        }
+
+        // Criando uma instância de copilot com o número de vértices do grafo
+        copilot dijkstra = new copilot(V);
+
+        // Chamando o método dijkstra com o grafo e o nó de origem
+        dijkstra.dijkstra(adj, 0); // Considerando o nó inicial como 0
+    }
+    
 }

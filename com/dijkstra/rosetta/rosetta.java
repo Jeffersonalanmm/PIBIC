@@ -1,5 +1,3 @@
-package com.dijkstra;
-
 import java.io.*;
 import java.util.*;
 

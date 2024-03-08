@@ -1,5 +1,3 @@
-package com.dijkstra;
-
 import java.util.*;
 
 public class gemini {
@@ -40,17 +38,26 @@ public class gemini {
             System.out.println(src + " -> " + i + " : " + dist[i]);
         }
     }
+    
+    public static void main(String[] args) {
+        int nVertices = 1000; // Número de vértices do grafo
 
-   /*  public static void main(String[] args) {
-        // Example graph
-        int[][] graph = {
-                {0, 4, 0, 0, 0},
-                {4, 0, 8, 0, 0},
-                {0, 8, 0, 7, 0},
-                {0, 0, 7, 0, 9},
-                {0, 0, 0, 9, 0}
-        };
-        int src = 0; // Source node
-        dijkstra(graph, src);
-    }*/
+        // Criação do grafo com 100.000 vértices
+        int[][] adjMat = new int[nVertices][nVertices];
+        for (int i = 0; i < nVertices; i++) {
+            for (int j = 0; j < nVertices; j++) {
+                // Lógica para preencher a matriz de adjacência com valores específicos
+                // Este exemplo assume um grafo com todos os pesos de aresta iguais a 1
+                // Você pode ajustar esta lógica conforme necessário para o seu grafo
+                if (i == j) {
+                    adjMat[i][j] = 0; // Distância de um vértice para ele mesmo é zero
+                } else {
+                    adjMat[i][j] = 1; // Distância de um vértice para outro é 1 (aresta direta)
+                }
+            }
+        }
+
+        // Chama o algoritmo de Dijkstra com o grafo criado
+        dijkstra(adjMat, 0); // Considerando o nó inicial como 0
+    }
 }
