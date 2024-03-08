@@ -1,18 +1,21 @@
 import sys
 import os
-from subprocess import Popen, PIPE, call  # Adicionando 'call' ao import
+from subprocess import Popen, PIPE, call
 
 path = '.'
-action = 'compile'
 
 def file_exists(file_path):
     return os.path.isfile(file_path) if file_path else False
 
 def main():
     for root, dirs, files in os.walk(path):
-        print('Checking', root)
-        makefile = os.path.join(root, "Makefile")
-        if file_exists(makefile):
+        if 'Makefile' in files:  # Verifica se existe um Makefile no diretório atual
+            print('Checking', root)
+            makefile = os.path.join(root, "Makefile")
+            action = 'compile'  # Ação padrão é compilar
+            if len(sys.argv) == 2:
+                action = sys.argv[1]
+
             cmd = 'cd ' + root + '; make ' + action
             pipes = Popen(cmd, shell=True, stdout=PIPE, stderr=PIPE)
             std_out, std_err = pipes.communicate()
@@ -25,20 +28,8 @@ def main():
                     print('[OK]')
                 else:
                     print('[OK]')
-        if action == 'measure':
-            call(['sleep', '5'])
+            if action == 'measure':
+                call(['sleep', '5'])
 
 if __name__ == '__main__':
-    if len(sys.argv) == 2:
-        act = sys.argv[1]
-        if act in ('compile', 'run', 'clean', 'measure'):
-            print('Performing "{}" action...'.format(act))
-            action = act
-        else:
-            print('Error: Unrecognized action "{}"'.format(act))
-            sys.exit(1)
-    else:
-        print('Performing "compile" action...')
-        action = 'compile'
-
     main()

@@ -1,7 +1,5 @@
 compile:
-	mkdir -p com/avl
-	cp BlackBox.java com/avl/BlackBox.java
-	/usr/bin/javac -d . com/avl/BlackBox.java
+	/usr/bin/javac -d . BlackBox.java
 
 measure:
 	/usr/bin/java -Xmx10m BlackBox 100000
