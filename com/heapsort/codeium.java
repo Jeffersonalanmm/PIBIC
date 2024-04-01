@@ -38,9 +38,9 @@ public class codeium {
         }
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         int[] array = {12, 11, 13, 5, 6, 7};
         heapSort(array);
         System.out.println(Arrays.toString(array));
-    }
+    }*/
 }
