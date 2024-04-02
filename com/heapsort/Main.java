@@ -5,8 +5,8 @@ class Main{
         amazonQ amazonQ = new amazonQ();
         chatGPT chatGPT = new chatGPT();
         gemini gemini = new gemini();
-        theAlgorithms theAlgorithms = new theAlgorithms();
-
+        theAlgorithms2 theAlgorithms2 = new theAlgorithms2();
+      
 
         int array[] = {12, 11, 13, 5, 6, 7};
         Integer[] array2 = {12, 11, 13, 5, 6, 7};
@@ -36,7 +36,7 @@ class Main{
         System.out.println("Array ordenado por Rosetta:");
         printArray(array);
         
-        Integer[] sortedArray = theAlgorithms.sort(array2);
+        Integer[] sortedArray = theAlgorithms2.sort(array2);
         System.out.println("Lista ordenada por The Algorithms: " + Arrays.toString(sortedArray));
     }
         // Método para imprimir um array

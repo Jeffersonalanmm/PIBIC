@@ -16,6 +16,7 @@ public interface SortAlgorithm {
      */
     <T extends Comparable<T>> T[] sort(T[] unsorted);
 
+    
     /**
      * Auxiliary method for algorithms what wanted to work with lists from JCF
      *

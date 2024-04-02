@@ -22,4 +22,28 @@ public class BlackBox {
             heapify(arr, n, largest);
         }
     }
+    public static void main(String[] args) {
+        // Criando um array para teste
+        int[] arr = {12, 11, 13, 5, 6, 7};
+
+        // Obtendo o tamanho do array
+        int n = arr.length;
+
+        // Chamando o método heapify
+        BlackBox.heapify(arr, n, 0);
+
+        // Imprimindo o array após a chamada ao método heapify
+        System.out.println("Array após heapify:");
+        printArray(arr);
+    }
+
+    // Método auxiliar para imprimir o array
+    static void printArray(int arr[]) {
+        int n = arr.length;
+        for (int i = 0; i < n; ++i)
+            System.out.print(arr[i] + " ");
+        System.out.println();
+    }
+
+    
 }

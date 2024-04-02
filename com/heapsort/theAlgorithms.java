@@ -1,49 +1,66 @@
-public class theAlgorithms implements SortAlgorithm {
+public class theAlgorithms {
 
-    /**
-     * For simplicity, we are considering the heap root index as 1 instead of 0.
-     * It simplifies future calculations. Because of that we are decreasing the
-     * provided indexes by 1 in {@link #swap(Object[], int, int)} and
-     * {@link #less(Comparable[], int, int)} functions.
-     */
-    @Override
-    public <T extends Comparable<T>> T[] sort(T[] unsorted) {
-        int n = unsorted.length;
-        heapify(unsorted, n);
-        while (n > 1) {
-            swap(unsorted, 1, n--);
-            siftDown(unsorted, 1, n);
+    public static void sort(int[] arr) {
+        int n = arr.length;
+
+        // Construindo um heap máximo
+        for (int i = n / 2 - 1; i >= 0; i--) {
+            siftDown(arr, i, n);
         }
-        return unsorted;
-    }
 
-    private static <T extends Comparable<T>> void heapify(T[] unsorted, int n) {
-        for (int k = n / 2; k >= 1; k--) {
-            siftDown(unsorted, k, n);
+        // Extração dos elementos um por um do heap
+        for (int i = n - 1; i >= 0; i--) {
+            // Move a raiz atual para o final
+            int temp = arr[0];
+            arr[0] = arr[i];
+            arr[i] = temp;
+
+            // Chama o siftDown no heap reduzido
+            siftDown(arr, 0, i);
         }
     }
 
-    private static <T extends Comparable<T>> void siftDown(T[] unsorted, int k, int n) {
-        while (2 * k <= n) {
-            int j = 2 * k;
-            if (j < n && less(unsorted, j, j + 1)) {
-                j++;
-            }
-            if (!less(unsorted, k, j)) {
-                break;
-            }
-            swap(unsorted, k, j);
-            k = j;
+    private static void siftDown(int arr[], int k, int n) {
+        int largest = k;
+        int l = 2 * k + 1;
+        int r = 2 * k + 2;
+
+        // Se o filho da esquerda é maior que a raiz
+        if (l < n && arr[l] > arr[largest])
+            largest = l;
+
+        // Se o filho da direita é maior que o maior até agora
+        if (r < n && arr[r] > arr[largest])
+            largest = r;
+
+        // Se o maior não é a raiz
+        if (largest != k) {
+            int swap = arr[k];
+            arr[k] = arr[largest];
+            arr[largest] = swap;
+
+            // Recursivamente constrói o heap afetado
+            siftDown(arr, largest, n);
         }
     }
 
-    private static <T> void swap(T[] array, int idx, int idy) {
-        T swap = array[idx - 1];
-        array[idx - 1] = array[idy - 1];
-        array[idy - 1] = swap;
+    public static void main(String[] args) {
+        // Criando um array para teste
+        int[] arr = {12, 11, 13, 5, 6, 7};
+
+        // Chamando o método de ordenação
+        sort(arr);
+
+        // Imprimindo o array após a ordenação
+        System.out.println("Array após ordenação:");
+        printArray(arr);
     }
 
-    private static <T extends Comparable<T>> boolean less(T[] array, int idx, int idy) {
-        return array[idx - 1].compareTo(array[idy - 1]) < 0;
+    // Método auxiliar para imprimir o array
+    static void printArray(int arr[]) {
+        int n = arr.length;
+        for (int i = 0; i < n; ++i)
+            System.out.print(arr[i] + " ");
+        System.out.println();
     }
 }
