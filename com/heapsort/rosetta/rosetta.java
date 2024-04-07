@@ -1,3 +1,4 @@
+package com.heapsort.rosetta;
 class rosetta{
 	public static void heapSort(int[] a){
 		int count = a.length;

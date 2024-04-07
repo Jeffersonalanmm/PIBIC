@@ -1,11 +1,19 @@
 import java.util.Arrays;
 
+import com.heapsort.BlackBox.BlackBox;
+import com.heapsort.amazonQ.amazonQ;
+import com.heapsort.chatGPT.chatGPT;
+import com.heapsort.codeium.codeium;
+import com.heapsort.gemini.gemini;
+import com.heapsort.rosetta.rosetta;
+import com.heapsort.theAlgorithms.theAlgorithms;
+
 class Main{
     public static void main(String[] args){
         amazonQ amazonQ = new amazonQ();
         chatGPT chatGPT = new chatGPT();
         gemini gemini = new gemini();
-        theAlgorithms2 theAlgorithms2 = new theAlgorithms2();
+        theAlgorithms theAlgorithms = new theAlgorithms();
       
 
         int array[] = {12, 11, 13, 5, 6, 7};
@@ -36,7 +44,7 @@ class Main{
         System.out.println("Array ordenado por Rosetta:");
         printArray(array);
         
-        Integer[] sortedArray = theAlgorithms2.sort(array2);
+        int[] sortedArray = theAlgorithms.sort(array);
         System.out.println("Lista ordenada por The Algorithms: " + Arrays.toString(sortedArray));
     }
         // Método para imprimir um array
