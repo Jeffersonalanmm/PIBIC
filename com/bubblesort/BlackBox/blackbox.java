@@ -1,6 +1,7 @@
-package com.bubblesort.blackbox;
+package com.bubblesort.BlackBox;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class blackbox {
     static void bubbleSort(int array[]) {
@@ -13,11 +14,17 @@ public class blackbox {
           array[j + 1] = temp;
         }
   }
+    public static void main(String[] args) {
+      // Criando um array com 1000 valores
+      int[] array = new int[1000];
 
-  public static void main(String args[]) {
-    int[] data = { 5, 3, 4, 1, 2 };
-    bubbleSort(data);
-    System.out.println("Array sorted with bubble sort: ");
-    System.out.println(Arrays.toString(data));
+      // Preenchendo o array com valores aleatórios entre 1 e 100
+      Random random = new Random();
+      for (int i = 0; i < array.length; i++) {
+          array[i] = random.nextInt(100) + 1; // Gera um número aleatório entre 1 e 100
+      }
+
+      // Chamando o método de ordenação
+      bubbleSort(array);
   }
 }

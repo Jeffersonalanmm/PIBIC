@@ -8,7 +8,7 @@ run:
 	/usr/bin/java -cp . -Xmx2g amazonQ
 
 mem:
-	/usr/bin/time -v /usr/bin/java -Xmx10m com.avl.amazonQ.amazonQ 1000
+	/usr/bin/time -v /usr/bin/java -Xmx10m com.heapsort.amazonQ.amazonQ 1000
 
 valgrind:
-	valgrind --tool=massif --stacks=yes /usr/bin/java -Xmx10m com.avl.amazonQ.amazonQ 1000
+	valgrind --tool=massif --stacks=yes /usr/bin/java -Xmx10m com.heapsort.amazonQ.amazonQ 1000

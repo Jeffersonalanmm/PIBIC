@@ -1,5 +1,7 @@
 package com.bubblesort.codeium;
 
+import java.util.Random;
+
 public class codeium {
     public void bubbleSort(int[] arr) {
         int n = arr.length;
@@ -14,4 +16,20 @@ public class codeium {
             }
         }
     }
+
+    public static void main(String[] args) {
+        codeium c = new codeium();
+        // Criando um array com 1000 valores
+        int[] array = new int[1000];
+    
+        // Preenchendo o array com valores aleatórios entre 1 e 100
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(100) + 1; // Gera um número aleatório entre 1 e 100
+        }
+    
+        // Chamando o método de ordenação através da instância da classe codeium
+        c.bubbleSort(array);
+    }
+    
 }

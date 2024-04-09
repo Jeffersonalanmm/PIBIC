@@ -1,4 +1,8 @@
-package com.heapsort.BlackBox;
+package BlackBox;
+
+import java.util.Arrays;
+import java.util.Random;
+
 public class BlackBox {
     static void heapify(int arr[], int n, int i) {
         int largest = i; // Initialize largest as root
@@ -24,27 +28,20 @@ public class BlackBox {
         }
     }
     public static void main(String[] args) {
-        // Criando um array para teste
-        int[] arr = {12, 11, 13, 5, 6, 7};
+        // Criando um array com 1000 valores
+        int[] array = new int[1000];
+
+        // Preenchendo o array com valores aleatórios entre 1 e 100
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(100) + 1; // Gera um número aleatório entre 1 e 100
+        }
 
         // Obtendo o tamanho do array
-        int n = arr.length;
+        int n = array.length;
 
         // Chamando o método heapify
-        BlackBox.heapify(arr, n, 0);
-
-        // Imprimindo o array após a chamada ao método heapify
-        System.out.println("Array após heapify:");
-        printArray(arr);
+        BlackBox.heapify(array, n, 0);
     }
-
-    // Método auxiliar para imprimir o array
-    static void printArray(int arr[]) {
-        int n = arr.length;
-        for (int i = 0; i < n; ++i)
-            System.out.print(arr[i] + " ");
-        System.out.println();
-    }
-
     
 }

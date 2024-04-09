@@ -1,11 +1,20 @@
 package com.bubblesort.chatGPT;
 
+import java.util.Random;
+
 public class chatGPT {
     public static void main(String[] args) {
-        int[] array = {64, 34, 25, 12, 22, 11, 90};
+        // Criando um array com 1000 valores
+        int[] array = new int[1000];
+
+        // Preenchendo o array com valores aleatórios entre 1 e 100
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(100) + 1; // Gera um número aleatório entre 1 e 100
+        }
+
+        // Chamando o método de ordenação
         bubbleSort(array);
-        System.out.println("Sorted array:");
-        printArray(array);
     }
 
     public static void bubbleSort(int[] array) {

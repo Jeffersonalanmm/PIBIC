@@ -1,4 +1,7 @@
-package com.heapsort.theAlgorithms;
+package theAlgorithms;
+
+import java.util.Random;
+
 public class theAlgorithms{
 
     public int[] sort(int[] unsorted) {
@@ -39,5 +42,20 @@ public class theAlgorithms{
 
     private static boolean less(int[] array, int idx, int idy) {
         return array[idx - 1] < array[idy - 1];
+    }
+
+    public static void main(String[] args) {
+        // Criando um array com 1000 valores
+        int[] array = new int[1000];
+
+        // Preenchendo o array com valores aleatórios entre 1 e 100
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+        array[i] = random.nextInt(100) + 1; // Gera um número aleatório entre 1 e 100
+        }
+        theAlgorithms algorithms = new theAlgorithms();
+
+        // Chamando o método de ordenação
+        algorithms.sort(array);
     }
 }
