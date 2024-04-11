@@ -20,7 +20,7 @@ public class rosetta{
 
     public static void main(String[] args) {
         // Criando um array com 1000 valores
-        int[] array = new int[1000];
+        int[] array = new int[10000];
 
         // Preenchendo o array com valores aleatórios entre 1 e 100
         Random random = new Random();
