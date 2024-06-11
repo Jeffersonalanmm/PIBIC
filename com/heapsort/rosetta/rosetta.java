@@ -1,4 +1,7 @@
-package com.heapsort.rosetta;
+package rosetta;
+
+import java.util.Random;
+
 class rosetta{
 	public static void heapSort(int[] a){
 		int count = a.length;
@@ -52,5 +55,18 @@ class rosetta{
 			}else
 				return;
 		}
+	}
+
+	public static void main(String[] args) {
+		// Criando um array com 1000 valores
+		int[] array = new int[1000];
+
+		// Preenchendo o array com valores aleatórios entre 1 e 100
+		Random random = new Random();
+		for (int i = 0; i < array.length; i++) {
+			array[i] = random.nextInt(100) + 1; // Gera um número aleatório entre 1 e 100
+		}
+
+		rosetta.heapSort(array);
 	}
 }

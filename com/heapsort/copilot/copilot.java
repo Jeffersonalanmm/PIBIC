@@ -1,4 +1,6 @@
-package com.heapsort.copilot;
+package copilot;
+
+import java.util.Random;
 
 public class copilot {
     public void sort(int arr[]) {
@@ -44,6 +46,18 @@ public class copilot {
             heapify(arr, n, largest);
         }
     }
-} {
-    
-}
+
+        public static void main(String[] args) {
+        // Criando um array com 1000 valores
+        int[] array = new int[1000];
+
+        // Preenchendo o array com valores aleatórios entre 1 e 100
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(100) + 1; // Gera um número aleatório entre 1 e 100
+        }
+
+        copilot ob = new copilot();
+        ob.sort(array);
+    }
+} 

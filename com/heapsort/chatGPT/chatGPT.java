@@ -1,4 +1,7 @@
-package com.heapsort.chatGPT;
+package chatGPT;
+import java.util.Random;
+
+
 public class chatGPT {
     public void sort(int arr[]) {
         int n = arr.length;
@@ -44,16 +47,17 @@ public class chatGPT {
         }
     }
 
-   /* public static void main(String args[]) {
-        int arr[] = {12, 11, 13, 5, 6, 7};
-        int n = arr.length;
+    public static void main(String[] args) {
+        // Criando um array com 1000 valores
+        int[] array = new int[1000];
+
+        // Preenchendo o array com valores aleatórios entre 1 e 100
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(100) + 1; // Gera um número aleatório entre 1 e 100
+        }
 
         chatGPT ob = new chatGPT();
-        ob.sort(arr);
-
-        System.out.println("Sorted array is");
-        for (int i = 0; i < n; ++i)
-            System.out.print(arr[i] + " ");
-        System.out.println();
-    }*/
+        ob.sort(array);
+    }
 }

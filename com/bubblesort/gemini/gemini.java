@@ -1,5 +1,7 @@
 package com.bubblesort.gemini;
 
+import java.util.Random;
+
 public class gemini {
     public static void sort(int[] arr) {
         int n = arr.length;
@@ -30,14 +32,17 @@ public class gemini {
         arr[i] = arr[j];
         arr[j] = temp;
       }
-    
-      public static void main(String[] args) {
-        int[] arr = {64, 34, 25, 12, 22, 11, 90};
-        sort(arr);
-    
-        System.out.println("Sorted array:");
-        for (int num : arr) {
-          System.out.print(num + " ");
-        }
-      }
+  public static void main(String[] args) {
+    // Criando um array com 1000 valores
+    int[] array = new int[10000];
+
+    // Preenchendo o array com valores aleatórios entre 1 e 100
+    Random random = new Random();
+    for (int i = 0; i < array.length; i++) {
+        array[i] = random.nextInt(100) + 1; // Gera um número aleatório entre 1 e 100
+    }
+
+    // Chamando o método de ordenação
+    sort(array);
+  }
 }

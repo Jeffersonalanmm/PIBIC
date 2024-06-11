@@ -1,5 +1,6 @@
-package com.heapsort.amazonQ;
+package amazonQ;
 import java.util.Arrays;
+import java.util.Random;
 
 public class amazonQ {
 
@@ -42,10 +43,17 @@ public class amazonQ {
     }
   }
 
-  public static void main(String[] args) {
-    int[] array = {12, 11, 13, 5, 6, 7};
-    sort(array);
-    System.out.println(Arrays.toString(array)); 
-  }
+    public static void main(String[] args) {
+        // Criando um array com 1000 valores
+        int[] array = new int[1000];
 
+        // Preenchendo o array com valores aleatórios entre 1 e 100
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(100) + 1; // Gera um número aleatório entre 1 e 100
+        }
+
+        // Chamando o método de ordenação
+        sort(array);
+    }
 }

@@ -1,14 +1,14 @@
 compile:
-	/usr/bin/javac -d . amazonQ.java
+	/usr/bin/javac -d . chatGPT.java
 
 measure:
-	/usr/bin/java -cp . amazonQ 1000
+	/usr/bin/java -Xmx10m chatGPT 10000
 
 run:
-	/usr/bin/java -cp . -Xmx2g amazonQ
+	/usr/bin/java -cp . chatGPT
 
 mem:
-	/usr/bin/time -v /usr/bin/java -Xmx10m com.avl.amazonQ.amazonQ 1000
+	/usr/bin/time -v /usr/bin/java -Xmx10m com.bubblesort.chatGPT.chatGPT 10000
 
 valgrind:
-	valgrind --tool=massif --stacks=yes /usr/bin/java -Xmx10m com.avl.amazonQ.amazonQ 1000
+	valgrind --tool=massif --stacks=yes /usr/bin/java -Xmx10m com.bubblesort.chatGPT.chatGPT 10000
