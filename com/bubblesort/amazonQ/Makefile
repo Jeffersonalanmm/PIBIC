@@ -2,10 +2,10 @@ compile:
 	/usr/bin/javac -d . amazonQ.java
 
 measure:
-	/usr/bin/java -cp . amazonQ 1000
+	/usr/bin/java -Xmx10m amazonQ 1000
 
 run:
-	/usr/bin/java -cp . -Xmx2g amazonQ
+	/usr/bin/java -cp . amazonQ
 
 mem:
 	/usr/bin/time -v /usr/bin/java -Xmx10m com.avl.amazonQ.amazonQ 1000
