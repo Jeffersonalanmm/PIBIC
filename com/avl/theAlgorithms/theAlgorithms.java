@@ -230,4 +230,14 @@ public class theAlgorithms {
         // call the function on the node's right child as it is greater
         return searchHelper(root.right, key);
     }
+    public static void main(String[] args) {
+        // Criar uma instância da classe theAlgorithms
+        theAlgorithms tree = new theAlgorithms();
+    
+        // Inserir 100000 nós na árvore AVL
+        for (int i = 1; i <= 100000; i++) {
+            tree.insert(i);
+        }
+    }
+    
 }

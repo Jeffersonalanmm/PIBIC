@@ -110,4 +110,14 @@ class AVLTree {
         /* return the (unchanged) node pointer */
         return node;
     }
+        public static void main(String[] args) {
+        // Criar uma instância da classe AVLTree
+        AVLTree tree = new AVLTree();
+
+        // Inserir 100000 nós na árvore AVL
+        for (int i = 1; i <= 100000; i++) {
+            tree.root = tree.insert(tree.root, i);
+        }
+    }
+
 } 

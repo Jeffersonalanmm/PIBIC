@@ -1,11 +1,11 @@
 compile:
-	/usr/bin/javac -d . copilot.java
+	javac copilot.java
 
 measure:
-	/usr/bin/java -cp . copilot 1000
+	java -Xmx10m copilot 1000
 
 run:
-	/usr/bin/java -cp . -Xmx2g copilot
+	java -cp . -Xmx2g copilot
 
 mem:
 	/usr/bin/time -v /usr/bin/java -Xmx10m com.avl.copilot.copilot 1000

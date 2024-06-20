@@ -1,11 +1,11 @@
 compile:
-	/usr/bin/javac -d . gemini.java
+	javac gemini.java
 
 measure:
-	/usr/bin/java -Xmx10m gemini 10000
+	java -Xmx10m gemini 10000
 
 run:
-	/usr/bin/java -cp . gemini
+	java -cp . gemini
 
 mem:
 	/usr/bin/time -v /usr/bin/java -Xmx10m com.bubblesort.gemini.gemini 10000

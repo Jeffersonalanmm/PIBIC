@@ -1,11 +1,11 @@
 compile:
-	/usr/bin/javac -d . rosetta.java
+	javac rosetta.java
 
 measure:
-	/usr/bin/java -cp . rosetta 1000
+	java -Xmx10m rosetta 1000
 
 run:
-	/usr/bin/java -cp . -Xmx2g rosetta
+	java -cp . -Xmx2g rosetta
 
 mem:
 	/usr/bin/time -v /usr/bin/java -Xmx10m com.heapsort.rosetta.rosetta 1000

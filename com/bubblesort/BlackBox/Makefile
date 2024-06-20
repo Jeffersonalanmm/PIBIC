@@ -1,11 +1,11 @@
 compile:
-	/usr/bin/javac -d . blackbox.java
+	javac blackbox.java
 
 measure:
-	/usr/bin/java -Xmx10m blackbox 10000
+	java -Xmx10m blackbox 10000
 
 run:
-	/usr/bin/java -cp . blackbox
+	java -cp . blackbox
 
 mem:
 	/usr/bin/time -v /usr/bin/java -Xmx10m com.bubblesort.blackbox.blackbox 10000

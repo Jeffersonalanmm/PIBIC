@@ -153,11 +153,21 @@ public class gemini<T extends Comparable<T>> {
     return node;
 }
 
-public void inOrderTraversal(Node<T> node) {
-    if (node != null) {
-        inOrderTraversal(node.left);
-        System.out.print(node.data + " ");
-        inOrderTraversal(node.right);
+    public void inOrderTraversal(Node<T> node) {
+        if (node != null) {
+            inOrderTraversal(node.left);
+            System.out.print(node.data + " ");
+            inOrderTraversal(node.right);
+        }
     }
-}
+    public static void main(String[] args) {
+        // Criar uma instância da classe gemini para armazenar inteiros
+        gemini<Integer> tree = new gemini<>();
+    
+        // Inserir 100000 nós na árvore AVL
+        for (int i = 1; i <= 100000; i++) {
+            tree.root = tree.insert(tree.root, i);
+        }
+    }
+    
 }

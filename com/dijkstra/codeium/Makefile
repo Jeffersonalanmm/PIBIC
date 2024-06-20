@@ -1,11 +1,11 @@
 compile:
-	/usr/bin/javac -d . codeium.java
+	javac codeium.java
 
 measure:
-	/usr/bin/java -cp . codeium 1000
+	java -Xmx10m codeium 1000
 
 run:
-	/usr/bin/java -cp . -Xmx2g codeium
+	java -cp . -Xmx2g codeium
 
 mem:
 	/usr/bin/time -v /usr/bin/java -Xmx10m com.avl.codeium.codeium 1000

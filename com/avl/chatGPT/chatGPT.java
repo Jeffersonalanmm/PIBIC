@@ -1,3 +1,4 @@
+package com.avl.chatGPT;
 class Node {
     int key, height;
     Node left, right;
@@ -86,4 +87,15 @@ class chatGPT {
 
         return node;
     }
+
+    public static void main(String[] args) {
+    // Criar uma instância da classe chatGPT
+    chatGPT tree = new chatGPT();
+
+    // Inserir 100000 nós na árvore AVL
+    for (int i = 1; i <= 100000; i++) {
+        tree.root = tree.insert(tree.root, i);
+    }
+}
+
 }

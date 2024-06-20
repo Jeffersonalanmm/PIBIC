@@ -1,11 +1,11 @@
 compile:
-	/usr/bin/javac -d . amazonQ.java
+	javac amazonQ.java
 
 measure:
-	/usr/bin/java -Xmx10m amazonQ 1000
+	java -Xmx10m amazonQ 1000
 
 run:
-	/usr/bin/java -cp . amazonQ
+	java -cp . amazonQ
 
 mem:
 	/usr/bin/time -v /usr/bin/java -Xmx10m com.heapsort.amazonQ.amazonQ 1000

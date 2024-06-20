@@ -206,4 +206,14 @@ public class rosetta {
             node.height = 1 + Math.max(height(node.left), height(node.right));
         }
     }
+    public static void main(String[] args) {
+        // Criar uma instância da classe rosetta
+        rosetta tree = new rosetta();
+    
+        // Inserir 100000 nós na árvore AVL
+        for (int i = 1; i <= 100000; i++) {
+            tree.insert(i);
+        }
+    }
+    
 }

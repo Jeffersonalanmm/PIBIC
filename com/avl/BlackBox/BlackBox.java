@@ -1,3 +1,4 @@
+
 class Node {
     int key, height;
     Node left, right;
@@ -125,8 +126,5 @@ class Node {
         for (int i = 1; i <= 100000; i++) {
             blackBox.root = blackBox.insert(blackBox.root, i);
         }
-
-        System.out.println("Árvore AVL com 100000 nós foi criada com sucesso!");
     }
-
    }

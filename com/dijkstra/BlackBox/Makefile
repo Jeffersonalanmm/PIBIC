@@ -1,11 +1,11 @@
 compile:
-	/usr/bin/javac -d . BlackBox.java
+	javac BlackBox.java
 
 measure:
-	/usr/bin/java -cp . BlackBox 1000
+	java -Xmx10m BlackBox 1000
 
 run:
-	/usr/bin/java -cp . -Xmx2g BlackBox
+	java -cp . -Xmx2g BlackBox
 
 mem:
 	/usr/bin/time -v /usr/bin/java -Xmx10m com.avl.BlackBox.BlackBox 1000

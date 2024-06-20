@@ -1,11 +1,11 @@
 compile:
-	/usr/bin/javac -d . theAlgorithms.java
+	javac theAlgorithms.java
 
 measure:
-	/usr/bin/java -Xmx10m theAlgorithms 100000
+	java -Xmx10m theAlgorithms 100000
 
 run:
-	/usr/bin/java -cp . theAlgorithms
+	java -cp . theAlgorithms
 
 mem:
 	/usr/bin/time -v /usr/bin/java -Xmx10m com.avl.theAlgorithms.theAlgorithms 100000

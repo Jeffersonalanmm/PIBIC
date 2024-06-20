@@ -88,5 +88,14 @@ public class codeium {
 
         return node;
     }
+    public static void main(String[] args) {
+        // Criar uma instância da classe codeium
+        codeium tree = new codeium();
+
+        // Inserir 100000 nós na árvore AVL
+        for (int i = 1; i <= 100000; i++) {
+            tree.root = tree.insert(tree.root, i);
+        }
+    }
 
 }

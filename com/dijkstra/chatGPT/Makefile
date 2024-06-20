@@ -1,11 +1,11 @@
 compile:
-	/usr/bin/javac -d . chatGPT.java
+	javac chatGPT.java
 
 measure:
-	/usr/bin/java -cp . chatGPT 1000
+	java -Xmx10m chatGPT 1000
 
 run:
-	/usr/bin/java -cp . -Xmx2g chatGPT
+	java -cp . -Xmx2g chatGPT
 
 mem:
 	/usr/bin/time -v /usr/bin/java -Xmx10m com.avl.chatGPT.chatGPT 1000
