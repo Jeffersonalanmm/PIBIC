@@ -1,0 +1,8 @@
+sudo ./main amazonQ output amazonQ
+sudo ./main codeium output codeium
+sudo ./main chatGPT output chatGPT
+sudo ./main rosetta output rosetta
+sudo ./main theAlgorithms output theAlgorithms
+sudo ./main copilot output copilot
+sudo ./main gemini output gemini
+sudo ./main BlackBox output BlackBox
