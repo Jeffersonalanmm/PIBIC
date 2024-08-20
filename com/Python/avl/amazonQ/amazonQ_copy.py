@@ -72,7 +72,7 @@ def main():
     avl_tree = AVLTree()
 
     # Gerar 1000 números aleatórios
-    numeros = random.sample(range(1, 10001), 10)
+    numeros = random.sample(range(1, 10001), 1000)
 
     # Inserir os números na árvore AVL
     for numero in numeros:

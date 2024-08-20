@@ -1,14 +1,12 @@
-compile:
-	javac copilot.java
-
 measure:
-	java -Xmx10m copilot 1000
+	sudo modprobe msr
+	sudo ../../RAPL/main "python3 copilot.py 1000" Python copilot
 
 run:
-	java -cp . -Xmx2g copilot
+	python3 copilot.py 1000
 
 mem:
-	/usr/bin/time -v /usr/bin/java -Xmx10m com.avl.copilot.copilot 1000
+	/usr/bin/time -v python3 copilot.py 1000
 
 valgrind:
-	valgrind --tool=massif --stacks=yes /usr/bin/java -Xmx10m com.avl.copilot.copilot 1000
+	valgrind --tool=massif --stacks=yes python3 copilot.py 10

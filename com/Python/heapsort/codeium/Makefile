@@ -1,14 +1,12 @@
-compile:
-	javac codeium.java
-
 measure:
-	java -Xmx10m codeium 1000
+	sudo modprobe msr
+	sudo ../../RAPL/main "python3 codeium.py 1000" Python codeium
 
 run:
-	java -cp . codeium
+	python3 codeium.py 1000
 
 mem:
-	/usr/bin/time -v /usr/bin/java -Xmx10m com.heapsort.codeium.codeium 1000
+	/usr/bin/time -v python3 codeium.py 1000
 
 valgrind:
-	valgrind --tool=massif --stacks=yes /usr/bin/java -Xmx10m com.heapsort.codeium.codeium 1000
+	valgrind --tool=massif --stacks=yes python3 codeium.py 10

@@ -1781,6 +1781,7 @@ class map:
           self.remove(key)
 
 import random
+from calculus import node, state
 
 def create_random_node():
     """Cria um nó com uma chave aleatória"""
