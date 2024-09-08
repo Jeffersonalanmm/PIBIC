@@ -4,5 +4,11 @@
         "stdlib.h": "c",
         "types.h": "c",
         "stdio.h": "c"
-    }
+    },
+    "java.project.sourcePaths": [
+        "Java/avl/theAlgorithms",
+        "Java/avl/amazonQ",
+        "Java/avl/BlackBox",
+        "Java/avl/chatGPT"
+    ]
 }

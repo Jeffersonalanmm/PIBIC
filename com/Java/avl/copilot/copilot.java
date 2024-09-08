@@ -1,5 +1,3 @@
-package com.avl.copilot;
-
 public class copilot {
     int key, height;
     copilot left, right;

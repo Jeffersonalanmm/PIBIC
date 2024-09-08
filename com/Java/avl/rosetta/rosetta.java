@@ -1,5 +1,3 @@
-package com.avl.rosetta;
-
 public class rosetta {
 
     private Node root;

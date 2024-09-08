@@ -1,4 +1,3 @@
-package com.avl.gemini;
 
 public class gemini<T extends Comparable<T>> {
 

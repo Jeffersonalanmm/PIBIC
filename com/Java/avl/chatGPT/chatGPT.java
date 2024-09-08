@@ -1,4 +1,4 @@
-package com.avl.chatGPT;
+
 class Node {
     int key, height;
     Node left, right;
