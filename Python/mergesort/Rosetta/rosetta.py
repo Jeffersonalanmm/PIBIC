@@ -1,4 +1,5 @@
 from heapq import merge
+import random
 
 def merge_sort(m):
     if len(m) <= 1:
@@ -29,3 +30,10 @@ def merge(left, right):
     if right_idx < len(right):
         result.extend(right[right_idx:])
     return result
+
+if __name__ == "__main__":
+    # Generate 1000 random values
+    random_list = [random.randint(0, 1000) for _ in range(1000)]
+    
+    # Sort the list using merge sort
+    sorted_list = merge_sort(random_list)

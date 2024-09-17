@@ -1,3 +1,4 @@
+import random
 class Node:
     """Represents a single node in the queue."""
     def __init__(self, value):
@@ -54,3 +55,22 @@ class Queue:
             values.append(str(current.value))
             current = current.next
         return " -> ".join(values)
+
+def main():
+    q = Queue()
+    # Enqueue 1000 random values
+    for _ in range(1000):
+        q.enqueue(random.randint(1, 10000))
+
+    # Dequeue all items
+    while not q.is_empty():
+        q.dequeue()
+
+    # Attempt to dequeue from an empty queue (will raise an exception)
+    try:
+        q.dequeue()
+    except IndexError:
+        pass  # Handling the exception gracefully
+
+if __name__ == "__main__":
+    main()

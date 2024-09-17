@@ -1,3 +1,4 @@
+import random
 class FIFO(object):
     def __init__(self, *args):
         self.contents = list(args)
@@ -20,27 +21,22 @@ class FIFO(object):
             raise StopIteration
         return self.pop()
 
+def main():
+    fifo_queue = FIFO()
+
+    # Generate and push 1000 random values into the FIFO queue
+    for _ in range(1000):
+        fifo_queue.push(random.randint(1, 10000))
+
+    # Pop all items from the queue
+    while not fifo_queue.empty():
+        fifo_queue.pop()
+
+    # Attempt to pop from an empty queue (this will raise an exception)
+    try:
+        fifo_queue.pop()
+    except IndexError:
+        pass  # Handling the exception gracefully
 
 if __name__ == "__main__":
-    # Sample usage:
-    f = FIFO()
-    f.push(3)
-    f.push(2)
-    f.push(1)
-    while not f.empty():
-        print (f.pop()),
-    # >>> 3 2 1
-    # Another simple example gives the same results:
-    f = FIFO(3,2,1)
-    while not f.empty():
-        print (f()),
-    # Another using the default "truth" value of the object
-    # (implicitly calls on the length() of the object after
-    # checking for a __nonzero__ method
-    f = FIFO(3,2,1)
-    while f:
-        print (f()),
-    # Yet another, using more Pythonic iteration:
-    f = FIFO(3,2,1)
-    for i in f:
-        print (i),
+    main()

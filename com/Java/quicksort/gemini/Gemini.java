@@ -1,4 +1,4 @@
-public class QuickSort {
+public class Gemini {
 
     public static void quickSort(int[] arr, int low, int high) {
         if (low < high) {
@@ -31,22 +31,18 @@ public class QuickSort {
 
         return i + 1;
     }
-
+  
     public static void main(String[] args) {
-        int[] arr = {10, 7, 8, 9, 1, 5};
-        int n = arr.length;
+        Random random = new Random();
+        int[] array = new int[1000];
+        
+        // Generate 1000 random values
+        for (int i = 0; i < 1000; i++) {
+            array[i] = random.nextInt(1000); // Random value between 0 and 999
+        }
 
-        quickSort(arr, 0, n - 1);
-
-        // Print the sorted array
-        System.out.println("Sorted array:");
-        printArray(arr);
+        // Sort the array
+        quickSort(array, 0, array.length - 1);
     }
 
-    private static void printArray(int[] arr) {
-        int n = arr.length;
-        for (int i = 0; i < n; ++i)
-            System.out.print(arr[i] + " ");
-        System.out.println();
-    }
 }

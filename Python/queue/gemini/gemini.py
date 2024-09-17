@@ -1,3 +1,4 @@
+import random
 class Queue:
     def __init__(self):
         self.queue = []
@@ -19,14 +20,22 @@ class Queue:
             return self.queue[0]
         else:
             raise IndexError("Queue is empty")
+def main():
+    q = Queue()
+    
+    # Enqueue 1000 random values
+    for _ in range(1000):
+        q.enqueue(random.randint(1, 10000))
+    
+    # Dequeue all items
+    while not q.is_empty():
+        q.dequeue()
+    
+    # Attempt to dequeue from an empty queue (will raise an exception)
+    try:
+        q.dequeue()
+    except IndexError:
+        pass  # Handling the exception gracefully
 
 if __name__ == "__main__":
-    queue = Queue()
-    queue.enqueue(1)
-    queue.enqueue(2)
-    queue.enqueue(3)
-
-    print(queue.peek())  # Output: 1
-    print(queue.dequeue())  # Output: 1
-    print(queue.peek())  # Output: 2
-    print(queue.is_empty())  # Output: False
+    main()

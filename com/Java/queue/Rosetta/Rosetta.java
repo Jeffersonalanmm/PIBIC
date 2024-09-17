@@ -1,4 +1,4 @@
-public class Queue<E>{
+public class Rosetta<E>{
     Node<E> head = null, tail = null;
 
     static class Node<E>{
@@ -12,7 +12,7 @@ public class Queue<E>{
 
     }
 
-    public Queue(){
+    public Rosetta(){
     }
 
     public void enqueue(E value){ //standard queue name for "push"
@@ -36,5 +36,20 @@ public class Queue<E>{
 
     public boolean empty(){
         return head == null;
+    }
+    public static void main(String[] args) {
+        Rosetta<Integer> queue = new Rosetta<>();
+        Random random = new Random();
+
+        // Enqueue 1000 random values
+        for (int i = 0; i < 1000; i++) {
+            int value = random.nextInt(1000); // Random value between 0 and 999
+            queue.enqueue(value);
+        }
+
+        // Dequeue all values
+        for (int i = 0; i < 1000; i++) {
+            queue.dequeue();
+        }
     }
 }

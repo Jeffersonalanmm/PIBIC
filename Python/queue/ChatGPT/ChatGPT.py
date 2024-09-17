@@ -1,5 +1,5 @@
 from collections import deque
-
+import random
 class Queue:
     def __init__(self):
         # Initialize an empty deque as the underlying data structure for the queue
@@ -51,3 +51,22 @@ if __name__ == "__main__":
     q.dequeue()
     q.display()
     print(f"Queue size: {q.size()}")
+
+def main():
+    q = Queue()
+    # Enqueue 1000 random values
+    for _ in range(1000):
+        q.enqueue(random.randint(1, 10000))
+
+    # Dequeue all items
+    while not q.is_empty():
+        q.dequeue()
+
+    # Attempt to dequeue from an empty queue (will raise an exception)
+    try:
+        q.dequeue()
+    except IndexError:
+        pass  # Handling the exception gracefully
+
+if __name__ == "__main__":
+    main()

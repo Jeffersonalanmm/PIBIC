@@ -1,3 +1,4 @@
+from random import randint
 def quicksort(arr):
     """
     Sorts an array using the quicksort algorithm.
@@ -24,6 +25,12 @@ def quicksort(arr):
         # Recursively sort the sub-arrays and combine the results.
         return quicksort(left) + middle + quicksort(right)
 
-# Example usage:
-arr = [5, 2, 9, 1, 7, 3]
-print(quicksort(arr))  # Output: [1, 2, 3, 5, 7, 9]
+def main():
+    # Generate 1000 random values
+    random_values = [randint(1, 10000) for _ in range(1000)]
+
+    # Sort the generated random values using quicksort
+    sorted_values = quicksort(random_values)
+
+if __name__ == "__main__":
+    main()

@@ -1,3 +1,4 @@
+import random
 def mergesort(arr):
   """Sorts an array using the mergesort algorithm.
 
@@ -50,3 +51,10 @@ def merge(left, right):
   result.extend(right[j:])
 
   return result 
+
+if __name__ == "__main__":
+    # Generate 1000 random values
+    random_list = [random.randint(0, 1000) for _ in range(1000)]
+    
+    # Sort the list using merge sort
+    sorted_list = mergesort(random_list)

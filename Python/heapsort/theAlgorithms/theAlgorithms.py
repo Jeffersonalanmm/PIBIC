@@ -4,7 +4,7 @@ This is a pure Python implementation of the heap sort algorithm.
 For doctests run following command:
 python -m doctest -v heap_sort.py
 or
-python3 -m doctest -v heap_sort.py
+python3 -OO -m doctest -v heap_sort.py
 
 For manual testing run:
 python heap_sort.py

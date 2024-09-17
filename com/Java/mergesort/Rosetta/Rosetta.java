@@ -2,7 +2,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Merge{
+public class Rosetta{
     public static <E extends Comparable<? super E>> List<E> mergeSort(List<E> m){
         if(m.size() <= 1) return m;
 
@@ -51,5 +51,20 @@ public class Merge{
 	    }
         }
         return result;
+    }
+
+	public static void main(String[] args) {
+        Random rand = new Random();
+        int size = 1000;
+        List<Integer> list = new ArrayList<>(size);
+
+        // Generate 1000 random values
+        for (int i = 0; i < size; i++) {
+            list.add(rand.nextInt(10000)); // Random values between 0 and 9999
+        }
+
+        list = mergeSort(list);
+
+        // No print statements as requested
     }
 }

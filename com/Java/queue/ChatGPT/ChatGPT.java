@@ -1,4 +1,4 @@
-public class Queue {
+public class ChatGPT {
     private int[] queueArray;  // Array to store queue elements
     private int front;         // Index of the front element
     private int rear;          // Index of the last element
@@ -6,7 +6,7 @@ public class Queue {
     private int capacity;      // Maximum capacity of the queue
 
     // Constructor to initialize queue
-    public Queue(int capacity) {
+    public ChatGPT(int capacity) {
         this.capacity = capacity;
         queueArray = new int[capacity];
         front = 0;
@@ -65,24 +65,22 @@ public class Queue {
 
     // Main method to demonstrate the working of the queue
     public static void main(String[] args) {
-        Queue queue = new Queue(5); // Create a queue of capacity 5
+        int capacity = 1000; // Queue capacity
+        ChatGPT queue = new ChatGPT(capacity);
 
-        queue.enqueue(10);
-        queue.enqueue(20);
-        queue.enqueue(30);
-        queue.enqueue(40);
-        queue.enqueue(50);
-
-        System.out.println("Front element is: " + queue.peek());
-        queue.dequeue();
-        System.out.println("Front element after dequeue is: " + queue.peek());
-
-        queue.enqueue(60); // This will not add as the queue is full
-
-        while (!queue.isEmpty()) {
-            queue.dequeue();
+        // Generate 1000 random values and enqueue them
+        java.util.Random rand = new java.util.Random();
+        for (int i = 0; i < capacity; i++) {
+            queue.enqueue(rand.nextInt(10000)); // Random values between 0 and 9999
         }
 
-        queue.dequeue(); // Trying to dequeue from an empty queue
+        // Dequeue all values to an array
+        int[] array = new int[capacity];
+        for (int i = 0; i < capacity; i++) {
+            array[i] = queue.dequeue();
+        }
+
+        // Sort the array using merge sort
+        mergeSort(array);
     }
 }

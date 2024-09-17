@@ -2,15 +2,15 @@
 A pure Python implementation of the quick sort algorithm
 
 For doctests run following command:
-python3 -m doctest -v quick_sort.py
+python3 -OO -m doctest -v quick_sort.py
 
 For manual testing run:
-python3 quick_sort.py
+python3 -OO quick_sort.py
 """
 
 from __future__ import annotations
 
-from random import randrange
+from random import randrange, randint
 
 
 def quick_sort(collection: list) -> list:
@@ -42,11 +42,12 @@ def quick_sort(collection: list) -> list:
     # Recursively sort the lesser and greater groups, and combine with the pivot
     return [*quick_sort(lesser), pivot, *quick_sort(greater)]
 
+def main():
+    # Generate 1000 random values
+    random_values = [randint(1, 10000) for _ in range(1000)]
+
+    # Sort the generated random values using quick_sort
+    sorted_values = quick_sort(random_values)
 
 if __name__ == "__main__":
-    # Get user input and convert it into a list of integers
-    user_input = input("Enter numbers separated by a comma:\n").strip()
-    unsorted = [int(item) for item in user_input.split(",")]
-
-    # Print the result of sorting the user-provided list
-    print(quick_sort(unsorted))
+    main()

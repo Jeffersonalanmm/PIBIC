@@ -1,13 +1,14 @@
-package com.thealgorithms.sorts;
+package com.Java.mergesort;
+import java.util.NoSuchElementException;
+import static com.Java.mergesort.SortUtils.less;
 
-import static com.thealgorithms.sorts.SortUtils.less;
 
 /**
  * Generic merge sort algorithm.
  *
  * @see SortAlgorithm
  */
-class MergeSort implements SortAlgorithm {
+class TheAlgorithms implements SortAlgorithm {
 
     private Comparable[] aux;
 
@@ -65,5 +66,23 @@ class MergeSort implements SortAlgorithm {
                 arr[k] = (T) aux[i++];
             }
         }
+    }
+    public static void main(String[] args) {
+        // Create an instance of TheAlgorithms
+        TheAlgorithms algorithm = new TheAlgorithms();
+
+        // Generate 1000 random values
+        Random rand = new Random();
+        int size = 1000;
+        Integer[] array = new Integer[size];
+        
+        for (int i = 0; i < size; i++) {
+            array[i] = rand.nextInt(10000); // Random values between 0 and 9999
+        }
+
+        // Sort the array using merge sort
+        algorithm.sort(array);
+
+        // No print statements as requested
     }
 }

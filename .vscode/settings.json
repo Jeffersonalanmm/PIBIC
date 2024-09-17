@@ -6,9 +6,11 @@
         "stdio.h": "c"
     },
     "java.project.sourcePaths": [
-        "Java/avl/theAlgorithms",
-        "Java/avl/amazonQ",
-        "Java/avl/BlackBox",
-        "Java/avl/chatGPT"
+        "com/Java/queue/Copilot",
+        "com/Java/mergesort/Codeium",
+        "com/Java/mergesort/ChatGPT",
+        "com/Java/mergesort/BlackBox",
+        "com/Java/mergesort/AmazonQ",
+        "com/Java/heapsort/BlackBox"
     ]
 }

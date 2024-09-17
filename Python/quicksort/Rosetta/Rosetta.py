@@ -1,3 +1,4 @@
+from random import randint
 def quick_sort(sequence):
     lesser = []
     equal = []
@@ -17,5 +18,12 @@ def quick_sort(sequence):
     return lesser + equal + greater
 
 
-a = [4, 65, 2, -31, 0, 99, 83, 782, 1]
-a = quick_sort(a)
+def main():
+    # Generate 1000 random values
+    random_values = [randint(1, 10000) for _ in range(1000)]
+
+    # Sort the generated random values using quick_sort
+    sorted_values = quick_sort(random_values)
+
+if __name__ == "__main__":
+    main()

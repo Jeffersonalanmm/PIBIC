@@ -1,3 +1,4 @@
+import random
 def merge_sort(arr):
     # Base case: an array of 0 or 1 element is already sorted
     if len(arr) <= 1:
@@ -35,7 +36,9 @@ def merge(left, right):
 
     return sorted_array
 
-# Example usage
-array = [38, 27, 43, 3, 9, 82, 10]
-sorted_array = merge_sort(array)
-print("Sorted array:", sorted_array)
+if __name__ == "__main__":
+    # Generate 1000 random values
+    random_list = [random.randint(0, 1000) for _ in range(1000)]
+    
+    # Sort the list using merge sort
+    sorted_list = merge_sort(random_list)
