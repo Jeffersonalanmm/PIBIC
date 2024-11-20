@@ -1,3 +1,6 @@
+compile:
+	cp theAlgorithms.python3 theAlgorithms.py
+
 measure:
 	sudo modprobe msr
 	sudo ../../RAPL/main "python3 -OO theAlgorithms.py 1000" Python theAlgorithms

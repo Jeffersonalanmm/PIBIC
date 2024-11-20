@@ -1,12 +1,15 @@
 compile:
-	/usr/bin/gcc -pipe -Wall -O3 -fomit-frame-pointer -march=native -fopenmp -D_FILE_OFFSET_BITS=64 -I/usr/include/apr-1.0 rosetta.c -o rosetta_run -lapr-1 -lgomp -lm
-	
+	cp amazonQ.python3 amazonQ.py
+
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./rosetta.c 32" C avl
+	sudo ../../RAPL/main "python3 -OO -OO amazonQ.py 1000" Python amazonQ
 
 run:
-	./rosetta.c 32
+	python3 -OO -OO amazonQ.py 1000
 
 mem:
-	/usr/bin/time -v ./rosetta.c 32
+	/usr/bin/time -v python3 -OO -OO amazonQ.py 1000
+
+valgrind:
+	valgrind --tool=massif --stacks=yes python3 -OO -OO amazonQ.py 1000

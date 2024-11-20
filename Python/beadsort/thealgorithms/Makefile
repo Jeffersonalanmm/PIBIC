@@ -1,12 +1,15 @@
 compile:
-	/usr/bin/gcc -pipe -Wall -O3 -fomit-frame-pointer -march=native -fopenmp -D_FILE_OFFSET_BITS=64 -I/usr/include/apr-1.0 thealgorithms.c -o thealgorithms_run -lapr-1 -lgomp -lm
-	
+	cp theAlgorithms.python3 theAlgorithms.py
+
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./thealgorithms.c 32" C avl
+	sudo ../../RAPL/main "python3 -OO -OO theAlgorithms.py 1000" Python theAlgorithms
 
 run:
-	./thealgorithms.c 32
+	python3 -OO -OO theAlgorithms.py 1000
 
 mem:
-	/usr/bin/time -v ./thealgorithms.c 32
+	/usr/bin/time -v python3 -OO -OO theAlgorithms.py 1000
+
+valgrind:
+	valgrind --tool=massif --stacks=yes python3 -OO -OO theAlgorithms.py 10

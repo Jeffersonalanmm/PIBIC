@@ -1,3 +1,6 @@
+compile:
+	cp codeium.python3 codeium.py
+
 measure:
 	sudo modprobe msr
 	sudo ../../RAPL/main "python3 -OO -OO codeium.py 1000" Python codeium

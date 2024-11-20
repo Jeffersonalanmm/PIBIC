@@ -1,3 +1,6 @@
+compile:
+	cp AmazonQ.python3 AmazonQ.py
+
 measure:
 	sudo modprobe msr
 	sudo ../../RAPL/main "python3 -OO AmazonQ.py 1000" Python AmazonQ

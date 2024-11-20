@@ -1,3 +1,6 @@
+compile:
+	cp BlackBox.python3 BlackBox.py
+
 measure:
 	sudo modprobe msr
 	sudo ../../RAPL/main "python3 -OO -OO BlackBox.py 1000" Python BlackBox

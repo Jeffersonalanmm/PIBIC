@@ -1,12 +1,15 @@
 compile:
-	/usr/bin/gcc -pipe -Wall -O3 -fomit-frame-pointer -march=native -fopenmp -D_FILE_OFFSET_BITS=64 -I/usr/include/apr-1.0 rosetta.c -o rosetta_run -lapr-1 -lgomp -lm
-	
+	cp gemini.python3 gemini.py
+
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./rosetta.c 32" C avl
+	sudo ../../RAPL/main "python3 -OO -OO gemini.py 1000" Python gemini
 
 run:
-	./rosetta.c 32
+	python3 -OO -OO gemini.py 1000
 
 mem:
-	/usr/bin/time -v ./rosetta.c 32
+	/usr/bin/time -v python3 -OO -OO gemini.py 1000
+
+valgrind:
+	valgrind --tool=massif --stacks=yes python3 -OO -OO gemini.py 1000

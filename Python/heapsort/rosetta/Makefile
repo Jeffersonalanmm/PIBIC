@@ -1,3 +1,6 @@
+compile:
+	cp rosetta.python3 AmazonQ.py
+
 measure:
 	sudo modprobe msr
 	sudo ../../RAPL/main "python3 -OO rosetta.py 1000" Python rosetta

@@ -1,3 +1,6 @@
+compile:
+	cp Rosetta.python3 Rosetta.py
+
 measure:
 	sudo modprobe msr
 	sudo ../../RAPL/main "python3 -OO Rosetta.py 1000" Python Rosetta

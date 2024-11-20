@@ -1,3 +1,6 @@
+compile:
+	cp gemini.python3 gemini.py
+
 measure:
 	sudo modprobe msr
 	sudo ../../RAPL/main "python3 -OO -OO gemini.py 1000" Python gemini

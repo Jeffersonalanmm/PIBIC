@@ -1,3 +1,6 @@
+compile:
+	cp copilot.python3 copilot.py
+
 measure:
 	sudo modprobe msr
 	sudo ../../RAPL/main "python3 -OO -OO copilot.py 1000" Python copilot

@@ -1,3 +1,6 @@
+compile:
+	cp chatGPT.python3 chatGPT.py
+
 measure:
 	sudo modprobe msr
 	sudo ../../RAPL/main "python3 -OO -OO chatGPT.py 1000" Python chatGPT
