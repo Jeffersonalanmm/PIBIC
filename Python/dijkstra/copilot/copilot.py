@@ -1,4 +1,5 @@
 import heapq
+import random
 
 def dijkstra(graph, start):
     # Initialize distances with infinity
@@ -26,13 +27,21 @@ def dijkstra(graph, start):
 
     return distances
 
-# Example usage:
-graph = {
-    'A': {'B': 1, 'C': 4},
-    'B': {'A': 1, 'C': 2, 'D': 5},
-    'C': {'A': 4, 'B': 2, 'D': 1},
-    'D': {'B': 5, 'C': 1}
-}
+if __name__ == "__main__":
+    # Generate a random graph with 1000 nodes
+    num_nodes = 1000
+    nodes = [f"Node_{i}" for i in range(num_nodes)]
+    graph = {node: {} for node in nodes}
 
-start_vertex = 'A'
-print(dijkstra(graph, start_vertex))
+    # Add random edges with weights
+    for node in nodes:
+        num_edges = random.randint(1, 10)  # Each node has 1 to 10 neighbors
+        neighbors = random.sample(nodes, num_edges)
+        for neighbor in neighbors:
+            if neighbor != node:
+                graph[node][neighbor] = random.randint(1, 100)  # Random weight between 1 and 100
+
+    # Select a random start node
+    start_node = random.choice(nodes)
+    # Run Dijkstra's algorithm
+    dijkstra(graph, start_node)

@@ -1,5 +1,5 @@
 compile:
-	cp avl.python3 avl.py
+	cp amazonQ.python3 amazonQ.py
 
 measure:
 	sudo modprobe msr

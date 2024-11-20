@@ -1,5 +1,5 @@
 compile:
-	cp AmazonQ.python3 AmazonQ.py
+	cp copilot.python3 copilot.py
 
 measure:
 	sudo modprobe msr
