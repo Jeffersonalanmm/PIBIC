@@ -3,7 +3,7 @@ compile:
 	
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./amazonq_run 1000" C quicksort
+	sudo ../RAPL/main "./amazonq_run 1000" C quicksort
 
 run:
 	./amazonq_run 1000

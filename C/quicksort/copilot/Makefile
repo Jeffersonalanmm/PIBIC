@@ -3,7 +3,7 @@ compile:
 	
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./copilot_run 1000" C quicksort
+	sudo ../RAPL/main "./copilot_run 1000" C quicksort
 
 run:
 	./copilot_run 1000

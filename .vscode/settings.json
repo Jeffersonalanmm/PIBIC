@@ -3,7 +3,9 @@
     "files.associations": {
         "stdlib.h": "c",
         "types.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "rapl.h": "c",
+        "time.h": "c"
     },
     "java.project.sourcePaths": [
         "com/Java/queue/Copilot",

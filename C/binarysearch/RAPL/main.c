@@ -1,7 +1,7 @@
 
 
 #include <stdio.h>
-#include <time.h>
+#include <sys/time.h>
 #include <math.h>
 #include <string.h>
 #include "rapl.h"
@@ -11,7 +11,7 @@
 
 int main (int argc, char **argv) 
 { char command[500]="",language[500]="", test[500]="", path[500]="";
-  int  ntimes = 10;
+  int  ntimes = 1000;
   int  core = 0;
   int  i=0;
 

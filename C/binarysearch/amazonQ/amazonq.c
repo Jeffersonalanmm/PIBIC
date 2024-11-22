@@ -1,54 +1,50 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 #include <time.h>
 
-void swap(int *a, int *b) {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
+// Function to compare two integers for qsort
+int compare(const void *a, const void *b) {
+    return (*(int *)a - *(int *)b);
 }
 
-void bubbleSort(int arr[], int n) {
-    if (n < 2) return;  // Early return for empty or single-element arrays
-    
-    bool swapped;
-    int newn;  // To optimize by tracking last swap position
-    
-    do {
-        swapped = false;
-        newn = 0;
-        
-        for (int i = 1; i < n; i++) {
-            if (arr[i - 1] > arr[i]) {
-                swap(&arr[i - 1], &arr[i]);
-                swapped = true;
-                newn = i;
-            }
+// Binary search function
+int binarySearch(int arr[], int size, int target) {
+    int left = 0, right = size - 1;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (arr[mid] == target) {
+            return mid; // Found target
+        } else if (arr[mid] < target) {
+            left = mid + 1; // Search in the right half
+        } else {
+            right = mid - 1; // Search in the left half
         }
-        // Update n to optimize next pass
-        n = newn;
-        
-    } while (swapped);
+    }
+    return -1; // Target not found
 }
 
 int main() {
-    const int SIZE = 1000;
-    int *arr = malloc(SIZE * sizeof(int));
-    
-    // Initialize random seed
+    int size = 1000;
+    int arr[size];
+    int target;
+
+    // Seed random number generator
     srand(time(NULL));
-    
-    // Generate 1000 random numbers
-    for (int i = 0; i < SIZE; i++) {
-        arr[i] = rand() % 10000;  // Random numbers between 0 and 9999
+
+    // Generate random values and fill the array
+    for (int i = 0; i < size; i++) {
+        arr[i] = rand() % 10000; // Random numbers between 0 and 9999
     }
-    
+
     // Sort the array
-    bubbleSort(arr, SIZE);
-    
-    // Free allocated memory
-    free(arr);
-    
-    return 0;
+    qsort(arr, size, sizeof(int), compare);
+
+    // Pick a random target
+    target = rand() % 10000;
+
+    // Perform binary search
+    int result = binarySearch(arr, size, target);
+
+    // The result can be used further if needed, but no output is printed
+   
 }

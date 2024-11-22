@@ -1,54 +1,49 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 #include <time.h>
+#include <stdbool.h>
 
-void swap(int *a, int *b) {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
+// Function to check if an array is sorted
+bool is_sorted(int arr[], int size) {
+    for (int i = 1; i < size; i++) {
+        if (arr[i - 1] > arr[i]) {
+            return false;
+        }
+    }
+    return true;
 }
 
-void bubbleSort(int arr[], int n) {
-    if (n < 2) return;  // Early return for empty or single-element arrays
-    
-    bool swapped;
-    int newn;  // To optimize by tracking last swap position
-    
-    do {
-        swapped = false;
-        newn = 0;
-        
-        for (int i = 1; i < n; i++) {
-            if (arr[i - 1] > arr[i]) {
-                swap(&arr[i - 1], &arr[i]);
-                swapped = true;
-                newn = i;
-            }
-        }
-        // Update n to optimize next pass
-        n = newn;
-        
-    } while (swapped);
+// Function to shuffle an array
+void shuffle(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        int random_index = rand() % size;
+        int temp = arr[i];
+        arr[i] = arr[random_index];
+        arr[random_index] = temp;
+    }
+}
+
+// Bogosort implementation
+void bogosort(int arr[], int size) {
+    while (!is_sorted(arr, size)) {
+        shuffle(arr, size);
+    }
 }
 
 int main() {
     const int SIZE = 1000;
-    int *arr = malloc(SIZE * sizeof(int));
-    
-    // Initialize random seed
-    srand(time(NULL));
-    
-    // Generate 1000 random numbers
+    int arr[SIZE];
+
+    // Initialize random number generator
+    srand((unsigned)time(NULL));
+
+    // Fill array with random values
     for (int i = 0; i < SIZE; i++) {
-        arr[i] = rand() % 10000;  // Random numbers between 0 and 9999
+        arr[i] = rand() % 10000; // Random values between 0 and 9999
     }
-    
-    // Sort the array
-    bubbleSort(arr, SIZE);
-    
-    // Free allocated memory
-    free(arr);
-    
+
+    // Sort the array using bogosort
+    bogosort(arr, SIZE);
+
     return 0;
 }
