@@ -3,10 +3,10 @@ compile:
 	
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./codeium.c 1000" C quicksort
+	sudo ../../RAPL/main "./codeium_run 1000" C quicksort
 
 run:
-	./codeium.c 1000
+	./codeium_run 1000
 
 mem:
-	/usr/bin/time -v ./codeium.c 1000
+	/usr/bin/time -v ./codeium_run 1000

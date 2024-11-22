@@ -3,10 +3,10 @@ compile:
 	
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./chatGPT.c 1000" C quicksort
+	sudo ../../RAPL/main "./chatGPT_run 1000" C quicksort
 
 run:
-	./chatGPT.c 1000
+	./chatGPT_run 1000
 
 mem:
-	/usr/bin/time -v ./chatGPT.c 1000
+	/usr/bin/time -v ./chatGPT_run 1000

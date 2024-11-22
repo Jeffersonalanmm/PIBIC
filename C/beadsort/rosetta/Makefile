@@ -3,10 +3,10 @@ compile:
 	
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./rosetta.c 1000" C beadsort
+	sudo ../../RAPL/main "./rosetta_run 1000" C beadsort
 
 run:
-	./rosetta.c 1000
+	./rosetta_run 1000
 
 mem:
-	/usr/bin/time -v ./rosetta.c 1000
+	/usr/bin/time -v ./rosetta_run 1000

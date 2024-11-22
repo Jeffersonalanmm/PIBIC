@@ -3,10 +3,10 @@ compile:
 	
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./thealgorithms.c 1000" C bogosort
+	sudo ../../RAPL/main "./thealgorithms_run 1000" C bogosort
 
 run:
-	./thealgorithms.c 1000
+	./thealgorithms_run 1000
 
 mem:
-	/usr/bin/time -v ./thealgorithms.c 1000
+	/usr/bin/time -v ./thealgorithms_run 1000

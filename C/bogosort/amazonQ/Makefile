@@ -3,10 +3,10 @@ compile:
 	
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./amazonq.c 1000" C bogosort
+	sudo ../../RAPL/main "./amazonq_run 1000" C bogosort
 
 run:
-	./amazonq.c 1000
+	./amazonq_run 1000
 
 mem:
-	/usr/bin/time -v ./amazonq.c 1000
+	/usr/bin/time -v ./amazonq_run 1000

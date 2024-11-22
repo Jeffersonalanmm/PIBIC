@@ -3,10 +3,10 @@ compile:
 	
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./BlackBox.c 1000" C avl
+	sudo ../../RAPL/main "./BlackBox_run 1000" C avl
 
 run:
-	./BlackBox.c 1000
+	./BlackBox_run 1000
 
 mem:
-	/usr/bin/time -v ./BlackBox.c 1000
+	/usr/bin/time -v ./BlackBox_run 1000

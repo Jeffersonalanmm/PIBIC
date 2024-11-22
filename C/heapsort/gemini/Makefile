@@ -3,10 +3,10 @@ compile:
 	
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./gemini.c 1000" C heapsort
+	sudo ../../RAPL/main "./gemini_run 1000" C heapsort
 
 run:
-	./gemini.c 1000
+	./gemini_run 1000
 
 mem:
-	/usr/bin/time -v ./gemini.c 1000
+	/usr/bin/time -v ./gemini_run 1000
