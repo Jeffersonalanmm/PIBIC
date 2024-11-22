@@ -3,7 +3,7 @@ compile:
 	
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./codeium_run 1000" C beadsort
+	sudo ../../RAPL/main "./codeium_run 1000" C Codeium
 
 run:
 	./codeium_run 1000

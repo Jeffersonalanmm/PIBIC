@@ -3,7 +3,7 @@ compile:
 	
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./rosetta_run 1000" C queue
+	sudo ../../RAPL/main "./rosetta_run 1000" C Rosetta
 
 run:
 	./rosetta_run 1000

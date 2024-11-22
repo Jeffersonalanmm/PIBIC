@@ -3,7 +3,7 @@ compile:
 	
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./chatGPT_run 1000" C heapsort
+	sudo ../../RAPL/main "./chatGPT_run 1000" C chatGPT
 
 run:
 	./chatGPT_run 1000

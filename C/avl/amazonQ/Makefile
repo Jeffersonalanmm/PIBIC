@@ -3,7 +3,7 @@ compile:
 	
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./amazonq_run 1000" C avl
+	sudo ../../RAPL/main "./amazonq_run 1000" C AmazonQ
 
 run:
 	./amazonq_run 1000

@@ -45,3 +45,4 @@ if __name__ == "__main__":
     start_node = random.choice(nodes)
     # Run Dijkstra's algorithm
     dijkstra(graph, start_node)
+ 

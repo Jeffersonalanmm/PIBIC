@@ -3,7 +3,7 @@ compile:
 	
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./thealgorithms_run 1000" C avl
+	sudo ../../RAPL/main "./thealgorithms_run 1000" C TheAlgorithms
 
 run:
 	./thealgorithms_run 1000
