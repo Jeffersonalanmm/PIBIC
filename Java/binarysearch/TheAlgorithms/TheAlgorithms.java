@@ -1,5 +1,3 @@
-package com.thealgorithms.searches;
-
 import java.util.Arrays;
 
 class TheAlgorithms {

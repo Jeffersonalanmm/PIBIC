@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "python3 -OO gemini.py 1000" Python gemini
+	sudo ../RAPL/main "python3 -OO gemini.py 1000" Python gemini
 
 run:
 	python3 -OO gemini.py 1000

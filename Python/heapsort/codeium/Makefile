@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "python3 -OO codeium.py 1000" Python codeium
+	sudo ../RAPL/main "python3 -OO codeium.py 1000" Python codeium
 
 run:
 	python3 -OO codeium.py 1000

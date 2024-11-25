@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "python3 -OO BlackBox.py 1000" Python BlackBox
+	sudo ../RAPL/main "python3 -OO BlackBox.py 1000" Python BlackBox
 
 run:
 	python3 -OO BlackBox.py 1000

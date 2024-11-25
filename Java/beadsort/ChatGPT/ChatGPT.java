@@ -1,3 +1,4 @@
+package beadsort.ChatGPT;
 import java.util.Arrays;
 
 public class ChatGPT {

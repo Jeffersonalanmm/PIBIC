@@ -98,13 +98,6 @@ class AVLTree:
             return root
         return self.get_min_value_node(root.left)
 
-    def pre_order(self, root):
-        if not root:
-            return
-        print("{0} ".format(root.key), end="")
-        self.pre_order(root.left)
-        self.pre_order(root.right)
-
 import random
 
 def main():
@@ -119,16 +112,12 @@ def main():
         root = avl.insert(root, numero)
 
     # Realizar a travessia em pré-ordem da árvore
-    print("Pre-order traversal of the constructed AVL tree is:")
-    avl.pre_order(root)
-    print()
+
 
     # Excluir um número aleatório da árvore
     num_to_delete = random.choice(numeros)
     root = avl.delete(root, num_to_delete)
-    print(f"Pre-order traversal after deletion of {num_to_delete}:")
-    avl.pre_order(root)
-    print()
+
 
 if __name__ == "__main__":
     main()

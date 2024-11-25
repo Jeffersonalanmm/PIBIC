@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "python3 -OO Copilot.py 1000" Python Copilot
+	sudo ../RAPL/main "python3 -OO Copilot.py 1000" Python Copilot
 
 run:
 	python3 -OO Copilot.py 1000

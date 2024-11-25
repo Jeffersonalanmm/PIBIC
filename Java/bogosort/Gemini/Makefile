@@ -1,14 +1,14 @@
 compile:
-	javac Gemini.java
+	javac -d . Gemini.java
 
 measure:
-	java -Xmx10m Gemini 1000
+	sudo ../RAPL/main "/usr/lib/jvm/java-11-openjdk-amd64/bin/java -cp . bogosort.Gemini.Gemini 1000" Java Gemini
 
 run:
-	java -cp . Gemini
+	/usr/lib/jvm/java-11-openjdk-amd64/bin/java -cp . bogosort.Gemini.Gemini 1000
 
 mem:
-	/usr/bin/time -v /usr/bin/java -Xmx10m beadsor.Gemini.Gemini 1000
+	/usr/bin/time -v /usr/bin/java -Xmx10m -cp . bogosort.Gemini.Gemini 1000
 
 valgrind:
-	valgrind --tool=massif --stacks=yes /usr/bin/java -Xmx10m beadsort.Gemini.Gemini 1000
+	valgrind --tool=massif --stacks=yes /usr/bin/java -Xmx10m -cp . bogosort.Gemini.Gemini 1000

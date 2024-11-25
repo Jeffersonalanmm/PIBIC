@@ -1,14 +1,14 @@
 compile:
-	javac ChatGPT.java
+	javac -d . ChatGPT.java
 
 measure:
-	java -Xmx10m ChatGPT 1000
+	sudo ../RAPL/main "/usr/lib/jvm/java-11-openjdk-amd64/bin/java -cp . bogosort.ChatGPT.ChatGPT 1000" Java ChatGPT
 
 run:
-	java -cp . ChatGPT
+	/usr/lib/jvm/java-11-openjdk-amd64/bin/java -cp . bogosort.ChatGPT.ChatGPT 1000
 
 mem:
-	/usr/bin/time -v /usr/bin/java -Xmx10m beadsor.ChatGPT.ChatGPT 1000
+	/usr/bin/time -v /usr/bin/java -Xmx10m -cp . bogosort.ChatGPT.ChatGPT 1000
 
 valgrind:
-	valgrind --tool=massif --stacks=yes /usr/bin/java -Xmx10m beadsort.ChatGPT.ChatGPT 1000
+	valgrind --tool=massif --stacks=yes /usr/bin/java -Xmx10m -cp . bogosort.ChatGPT.ChatGPT 1000

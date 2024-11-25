@@ -14,12 +14,6 @@ int minDistance(int dist[], bool sptSet[]) {
     return min_index;
 }
 
-void printSolution(int dist[]) {
-    printf("Vertex \t Distance from Source\n");
-    for (int i = 0; i < V; i++)
-        printf("%d \t %d \n", i, dist[i]);
-}
-
 void dijkstra(int graph[V][V], int src) {
     int dist[V];
     bool sptSet[V];

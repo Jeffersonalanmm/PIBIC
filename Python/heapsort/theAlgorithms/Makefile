@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "python3 -OO theAlgorithms.py 1000" Python theAlgorithms
+	sudo ../RAPL/main "python3 -OO theAlgorithms.py 1000" Python theAlgorithms
 
 run:
 	python3 -OO theAlgorithms.py 1000

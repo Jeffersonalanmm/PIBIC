@@ -1,14 +1,14 @@
 compile:
-	javac gemini.java
+	javac -d . gemini.java
 
 measure:
-	java -Xmx10m gemini 100000
+	sudo ../RAPL/main "/usr/lib/jvm/java-11-openjdk-amd64/bin/java -cp . com.avl.gemini.gemini 1000" Java gemini
 
 run:
-	java -cp . gemini
+	/usr/lib/jvm/java-11-openjdk-amd64/bin/java -cp . com.avl.gemini.gemini 1000
 
 mem:
-	/usr/bin/time -v /usr/bin/java -Xmx10m com.avl.gemini.gemini 100000
+	/usr/bin/time -v /usr/bin/java -Xmx10m -cp . com.avl.gemini.gemini 1000
 
 valgrind:
-	valgrind --tool=massif --stacks=yes /usr/bin/java -Xmx10m com.avl.gemini.gemini 100000
+	valgrind --tool=massif --stacks=yes /usr/bin/java -Xmx10m -cp . com.avl.gemini.gemini 1000

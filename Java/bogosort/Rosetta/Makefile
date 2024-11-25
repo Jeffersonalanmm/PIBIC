@@ -1,14 +1,14 @@
 compile:
-	javac Rosetta.java
+	javac -d . Rosetta.java
 
 measure:
-	java -Xmx10m Rosetta 1000
+	sudo ../RAPL/main "/usr/lib/jvm/java-11-openjdk-amd64/bin/java -cp . bogosort.Rosetta.Rosetta 1000" Java Rosetta
 
 run:
-	java -cp . Rosetta
+	/usr/lib/jvm/java-11-openjdk-amd64/bin/java -cp . bogosort.Rosetta.Rosetta 1000
 
 mem:
-	/usr/bin/time -v /usr/bin/java -Xmx10m beadsor.Rosetta.Rosetta 1000
+	/usr/bin/time -v /usr/bin/java -Xmx10m -cp . bogosort.Rosetta.Rosetta 1000
 
 valgrind:
-	valgrind --tool=massif --stacks=yes /usr/bin/java -Xmx10m beadsort.Rosetta.Rosetta 1000
+	valgrind --tool=massif --stacks=yes /usr/bin/java -Xmx10m -cp . bogosort.Rosetta.Rosetta 1000

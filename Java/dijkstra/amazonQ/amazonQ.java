@@ -1,5 +1,3 @@
-package com.dijkstra.amazonQ;
-
 import java.util.PriorityQueue;
 import java.util.Map;
 import java.util.HashMap;
@@ -26,7 +24,7 @@ public class amazonQ {
     }
   }
 
-  public static void dijkstra(Graph graph, int source) {
+  public static void dijkstra(amazonQ graph, int source) {
     PriorityQueue<Node> priorityQueue = new PriorityQueue<>();
     Map<Integer, Double> distances = new HashMap<>();
 

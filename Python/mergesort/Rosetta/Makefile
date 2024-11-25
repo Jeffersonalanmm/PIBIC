@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "python3 -OO rosetta.py 1000" Python rosetta
+	sudo ../RAPL/main "python3 -OO rosetta.py 1000" Python rosetta
 
 run:
 	python3 -OO rosetta.py 1000

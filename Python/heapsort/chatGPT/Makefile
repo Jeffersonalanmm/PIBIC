@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "python3 -OO chatGPT.py 1000" Python chatGPT
+	sudo ../RAPL/main "python3 -OO chatGPT.py 1000" Python chatGPT
 
 run:
 	python3 -OO chatGPT.py 1000

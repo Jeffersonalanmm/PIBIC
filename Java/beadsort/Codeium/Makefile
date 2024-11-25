@@ -1,14 +1,14 @@
 compile:
-	javac Codeium.java
+	javac -d . Codeium.java
 
 measure:
-	java -Xmx10m Codeium 1000
+	sudo ../RAPL/main "/usr/lib/jvm/java-11-openjdk-amd64/bin/java -cp . beadsort.Codeium 1000" Java Codeium
 
 run:
-	java -cp . Codeium
+	/usr/lib/jvm/java-11-openjdk-amd64/bin/java -cp . beadsort.Codeium 1000
 
 mem:
-	/usr/bin/time -v /usr/bin/java -Xmx10m com.beadsort.Codeium.Codeium 1000
+	/usr/bin/time -v /usr/bin/java -Xmx10m -cp . beadsort.Codeium 1000
 
 valgrind:
-	valgrind --tool=massif --stacks=yes /usr/bin/java -Xmx10m com.beadsort.Codeium.Codeium 1000
+	valgrind --tool=massif --stacks=yes /usr/bin/java -Xmx10m -cp . beadsort.Codeium 1000

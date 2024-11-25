@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <stdbool.h>
+#include <time.h> 
 
 #define MAX_VERTICES 100
 #define INF INT_MAX
@@ -186,19 +187,15 @@ void dijkstra(struct Graph* graph, int src) {
     }
 
     // Print the shortest path tree
-    printf("Vertex\tDistance from Source\tPath\n");
     for (int i = 0; i < vertices; i++) {
         printf("%d\t%d\t\t\t", i, dist[i]);
         
         // Print path
         int j = i;
         while (parent[j] != -1) {
-            printf("%d <- ", j);
+
             j = parent[j];
         }
-        if (i != src)
-            printf("%d", src);
-        printf("\n");
     }
 
     free(dist);
@@ -209,27 +206,39 @@ void dijkstra(struct Graph* graph, int src) {
 }
 
 // Example usage
+// Para gerar números aleatórios
+
 int main() {
-    int vertices = 9;
+    int vertices = 1000;
     struct Graph* graph = createGraph(vertices);
 
-    // Add edges
-    addEdge(graph, 0, 1, 4);
-    addEdge(graph, 0, 7, 8);
-    addEdge(graph, 1, 2, 8);
-    addEdge(graph, 1, 7, 11);
-    addEdge(graph, 2, 3, 7);
-    addEdge(graph, 2, 8, 2);
-    addEdge(graph, 2, 5, 4);
-    addEdge(graph, 3, 4, 9);
-    addEdge(graph, 3, 5, 14);
-    addEdge(graph, 4, 5, 10);
-    addEdge(graph, 5, 6, 2);
-    addEdge(graph, 6, 7, 1);
-    addEdge(graph, 6, 8, 6);
-    addEdge(graph, 7, 8, 7);
+    // Inicializa o gerador de números aleatórios
+    srand(time(NULL));
 
+    // Adiciona arestas aleatórias ao grafo
+    for (int i = 0; i < vertices; i++) {
+        for (int j = 0; j < 10; j++) { // Conecta cada vértice a até 10 outros aleatórios
+            int dest = rand() % vertices;
+            int weight = (rand() % 20) + 1; // Pesos entre 1 e 20
+            if (i != dest) {
+                addEdge(graph, i, dest, weight);
+            }
+        }
+    }
+
+    // Executa o algoritmo de Dijkstra a partir do vértice 0
     dijkstra(graph, 0);
+
+    // Libera memória usada pelo grafo
+    for (int i = 0; i < vertices; i++) {
+        struct Node* node = graph->adjacencyList[i];
+        while (node) {
+            struct Node* temp = node;
+            node = node->next;
+            free(temp);
+        }
+    }
+    free(graph);
 
     return 0;
 }
