@@ -78,8 +78,17 @@ int main()
         }
     }
 
+    for (int i = 0; i < V; ++i)
+    {
+        for (int j = 0; j < V; ++j)
+        {
+            if (i != j)
+                mat[i][j] = rand() % 100;  // Gera valores aleatórios entre 0 e 99
+            else
+                mat[i][j] = 0;  // A diagonal da matriz é 0 (nenhum custo para um nó para ele mesmo)
+        }
+    }
     dijkstra(0);
 
-    free(dist);
     return 0;
 }
