@@ -6,4 +6,3 @@ tmp.*
 lshw
 sysinfo.*
 .vscode/
-config.json

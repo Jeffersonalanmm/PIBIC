@@ -1,8 +1,0 @@
-sudo ./main amazonQ Python amazonQ
-sudo ./main codeium Python codeium
-sudo ./main chatGPT Python chatGPT
-sudo ./main rosetta Python rosetta
-sudo ./main theAlgorithms Python theAlgorithms
-sudo ./main copilot Python copilot
-sudo ./main gemini Python gemini
-sudo ./main BlackBox Python BlackBox

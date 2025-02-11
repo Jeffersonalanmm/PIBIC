@@ -37,7 +37,7 @@ void dijkstra(int graph[V][V], int src) {
 
         // Update dist value of the adjacent vertices of the picked vertex
         for (int v = 0; v < V; v++)
-            if (graph[u][v] > 0 && dist[v] > dist[u] + graph[u][v] && sptSet[v] == 0)
+            if (graph[u][v] > 0 && sptSet[v] == 0 && dist[v] > dist[u] + graph[u][v])
                 dist[v] = dist[u] + graph[u][v];
     }
 }

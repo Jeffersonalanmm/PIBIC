@@ -2,51 +2,59 @@
 #include <stdlib.h>
 #include <time.h>
 
-// Function to swap two elements
-void swap(int* a, int* b) {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
-
-// Function to perform bubble sort
-void bubbleSort(int arr[], int n) {
+// Function to check if an array is sorted
+int is_sorted(int* arr, int n) {
     for (int i = 0; i < n - 1; i++) {
-        // Flag to check if any swaps were made in the current pass
-        int swapped = 0;
-
-        for (int j = 0; j < n - i - 1; j++) {
-            // If the current element is greater than the next element, swap them
-            if (arr[j] > arr[j + 1]) {
-                swap(&arr[j], &arr[j + 1]);
-                swapped = 1;
-            }
-        }
-
-        // If no swaps were made in the current pass, the list is already sorted
-        if (!swapped) {
-            break;
+        if (arr[i] > arr[i + 1]) {
+            return 0;
         }
     }
+    return 1;
 }
 
-// Function to generate a random array of integers
-void generateRandomArray(int arr[], int n) {
-    srand(time(NULL));
+// Function to shuffle an array
+void shuffle(int* arr, int n) {
     for (int i = 0; i < n; i++) {
-        arr[i] = rand() % 1000;
+        int j = rand() % n;
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 }
+
+// Bogo Sort function
+void bogo_sort(int* arr, int n) {
+    srand(time(NULL)); // Seed the random number generator
+    while (!is_sorted(arr, n)) {
+        shuffle(arr, n);
+    }
+}
+
+// Function to print an array (commented out)
+// void print_array(int* arr, int n) {
+//     for (int i = 0; i < n; i++) {
+//         printf("%d ", arr[i]);
+//     }
+//     printf("\n");
+// }
 
 int main() {
-    const int n = 1000;
-    int arr[n];
+    int n = 1000;
+    int* arr = (int*)malloc(n * sizeof(int));
 
-    // Generate a random array of 1000 integers
-    generateRandomArray(arr, n);
+    // Initialize the array with values from 1 to n
+    for (int i = 0; i < n; i++) {
+        arr[i] = i + 1;
+    }
 
-    // Perform bubble sort on the array
-    bubbleSort(arr, n);
+    // Shuffle the array to create an unsorted input
+    shuffle(arr, n);
+
+    // Sort the array using Bogo Sort
+    bogo_sort(arr, n);
+
+    // Free the allocated memory
+    free(arr);
 
     return 0;
 }
