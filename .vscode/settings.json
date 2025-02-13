@@ -14,5 +14,6 @@
         "com/Java/mergesort/BlackBox",
         "com/Java/mergesort/AmazonQ",
         "com/Java/heapsort/BlackBox"
-    ]
+    ],
+    "C_Cpp.errorSquiggles": "disabled"
 }

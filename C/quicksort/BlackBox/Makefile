@@ -3,7 +3,7 @@ compile:
 	
 measure:
 	sudo modprobe msr
-	sudo ../RAPL/main "./BlackBox_run 1000" C quicksort
+	sudo ../RAPL/main "./BlackBox_run 1000" C BlackBox
 
 run:
 	./BlackBox_run 1000

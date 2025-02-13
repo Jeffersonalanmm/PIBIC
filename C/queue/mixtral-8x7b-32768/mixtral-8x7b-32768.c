@@ -24,7 +24,6 @@ int is_full(Queue *q) {
 
 void enqueue(Queue *q, int value) {
     if (is_full(q)) {
-        printf("Queue is full. Cannot enqueue %d.\n", value);
         return;
     }
     if (q->front == -1) {
@@ -36,7 +35,6 @@ void enqueue(Queue *q, int value) {
 
 int dequeue(Queue *q) {
     if (is_empty(q)) {
-        printf("Queue is empty. Cannot dequeue.\n");
         return -1;
     }
     int value = q->items[q->front];
@@ -54,10 +52,6 @@ int main() {
 
     for (int i = 0; i < 1000; i++) {
         enqueue(&q, i);
-    }
-
-    for (int i = 0; i < 1000; i++) {
-        printf("%d ", dequeue(&q));
     }
 
     return 0;

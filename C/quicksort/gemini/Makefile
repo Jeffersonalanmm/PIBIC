@@ -3,7 +3,7 @@ compile:
 	
 measure:
 	sudo modprobe msr
-	sudo ../RAPL/main "./gemini_run 1000" C quicksort
+	sudo ../RAPL/main "./gemini_run 1000" C Gemini
 
 run:
 	./gemini_run 1000

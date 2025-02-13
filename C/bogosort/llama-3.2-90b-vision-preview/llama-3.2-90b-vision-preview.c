@@ -45,6 +45,7 @@ int main() {
     // Initialize the array with values from 1 to n
     for (int i = 0; i < n; i++) {
         arr[i] = i + 1;
+        fflush(stdout); 
     }
 
     // Shuffle the array to create an unsorted input
