@@ -25,12 +25,18 @@ void bogo_sort(int *arr, int n) {
     }
 }
 
-int main(void) {
-    srand(time(NULL));
-    int arr[1000];
-    for (int i = 0; i < 1000; i++) {
-        arr[i] = 1;
+int main()
+{
+    int n = 1000;
+    int numbers[n];
+    srand(time(NULL));  // Seed para geração de números aleatórios
+
+    for (int i = 0; i < n; i++)
+    {
+        numbers[i] = (rand() % 10000) + 1;  // Gera valores aleatórios entre 0 e 9999
     }
-    bogo_sort(arr, 1000);
+
+    bogo_sort(numbers, n);
+
     return 0;
 }

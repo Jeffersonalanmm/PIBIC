@@ -33,7 +33,7 @@ int main()
   srand(time(NULL));  // Seed para geração de números aleatórios
 
   for (int i = 0; i < n; i++) {
-    numbers[i] = rand() % 10000;  // Gera valores aleatórios entre 0 e 9999
+    numbers[i] = rand() % 10000+1;  // Gera valores aleatórios entre 0 e 9999
   }
 
   bogosort(numbers, n);

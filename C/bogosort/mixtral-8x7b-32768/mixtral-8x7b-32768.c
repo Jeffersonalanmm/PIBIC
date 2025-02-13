@@ -17,17 +17,18 @@ void bogo_sort(int arr[], int n) {
     }
 }
 
-int main() {
+int main()
+{
     int n = 1000;
-    int *arr = malloc(n * sizeof(int));
+    int numbers[n];
+    srand(time(NULL));  // Seed para geração de números aleatórios
 
-    srand(time(NULL));
-    for (int i = 0; i < n; i++) {
-        arr[i] = rand() % n;
+    for (int i = 0; i < n; i++)
+    {
+        numbers[i] = (rand() % 10000) + 1;  // Gera valores aleatórios entre 0 e 9999
     }
 
-    bogo_sort(arr, n);
+    bogo_sort(numbers, n);
 
-    free(arr);
     return 0;
 }

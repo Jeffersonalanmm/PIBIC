@@ -14,7 +14,7 @@ int is_sorted(int arr[], int n) {
 
 // Function to shuffle an array
 void shuffle(int arr[], int n) {
-    srand(time(NULL));
+    //srand(time(NULL)); lembrar iguale
     for (int i = n - 1; i > 0; i--) {
         int j = rand() % (i + 1);
         int temp = arr[i];
@@ -24,12 +24,12 @@ void shuffle(int arr[], int n) {
 }
 
 // Function to print an array
-void print_array(int arr[], int n) {
-    for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
-}
+//void print_array(int arr[], int n) {
+//    for (int i = 0; i < n; i++) {
+//        printf("%d ", arr[i]);
+//    }
+//    printf("\n");
+//}
 
 // Bogo Sort algorithm
 void bogo_sort(int arr[], int n) {
@@ -39,23 +39,18 @@ void bogo_sort(int arr[], int n) {
 }
 
 // Example usage
-int main() {
-    const int size = 1000;
-    int* arr = (int*)malloc(size * sizeof(int));
+int main()
+{
+    int n = 1000;
+    int numbers[n];
+    srand(time(NULL));  // Seed para geração de números aleatórios
 
-    // Seed para o gerador de números aleatórios
-    srand(time(NULL));
-
-    // Gera 1000 números aleatórios entre 1 e 1000
-    for (int i = 0; i < size; ++i) {
-        arr[i] = rand() % 1000 + 1; // Gera números entre 1 e 1000
+    for (int i = 0; i < n; i++)
+    {
+        numbers[i] = (rand() % 10000) + 1;  // Gera valores aleatórios entre 0 e 9999
     }
 
-    // Ordena o array usando Bogo Sort
-    bogo_sort(arr, size);
-
-    // Libera a memória alocada
-    free(arr);
+    bogo_sort(numbers, n);
 
     return 0;
 }
