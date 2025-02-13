@@ -11,15 +11,18 @@ int main() {
     const int size = 1000;
     int* array = (int*)malloc(size * sizeof(int));
     
-    // Read 1000 integers from input
+    // Seed para o gerador de números aleatórios
+    srand(time(NULL));
+    
+    // Gera 1000 números aleatórios entre 1 e 1000
     for (int i = 0; i < size; ++i) {
-        scanf("%d", &array[i]);
+        array[i] = rand() % 1000 + 1; // Gera números entre 1 e 1000
     }
     
-    // Sort the array using Quick Sort
+    // Ordena o array usando Quick Sort
     quick_sort(array, 0, size - 1);
     
-    // Don't forget to free the allocated memory
+    // Libera a memória alocada
     free(array);
     
     return 0;

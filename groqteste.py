@@ -12,10 +12,10 @@ chat_completion = client.chat.completions.create(
     messages=[
         {
             "role": "user",
-            "content": "Please write your best implementation of Quick Sort algorithm in C programming language. Additionaly, remove prints and create a default main with a 1000 values input.",
+            "content": "Please write your best implementation of Bogo Sort algorithm in C programming language.",
         }
     ],
-    model="deepseek-r1-distill-llama-70b",
+    model="llama-3.3-70b-versatile",
     temperature = 0,
 )
 

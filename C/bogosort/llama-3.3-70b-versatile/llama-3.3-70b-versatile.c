@@ -2,6 +2,13 @@
 #include <stdlib.h>
 #include <time.h>
 
+// Function to swap two elements
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
 // Function to check if an array is sorted
 int is_sorted(int arr[], int n) {
     for (int i = 0; i < n - 1; i++) {
@@ -16,13 +23,11 @@ int is_sorted(int arr[], int n) {
 void shuffle(int arr[], int n) {
     for (int i = n - 1; i > 0; i--) {
         int j = rand() % (i + 1);
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+        swap(&arr[i], &arr[j]);
     }
 }
 
-// Function to implement Bogo Sort
+// Bogo Sort function
 void bogo_sort(int arr[], int n) {
     srand(time(NULL)); // Seed for random number generation
     while (!is_sorted(arr, n)) {
@@ -30,21 +35,31 @@ void bogo_sort(int arr[], int n) {
     }
 }
 
-// Function to print an array (commented out as per request)
-// void print_array(int arr[], int n) {
-//     for (int i = 0; i < n; i++) {
-//         printf("%d ", arr[i]);
-//     }
-//     printf("\n");
-// }
+// Function to print an array
+//void print_array(int arr[], int n) {
+//    for (int i = 0; i < n; i++) {
+//        printf("%d ", arr[i]);
+//    }
+//    printf("\n");
+//}
 
 int main() {
-    int n = 1000;
-    int* arr = (int*) malloc(n * sizeof(int));
-    for (int i = 0; i < n; i++) {
-        arr[i] = rand() % 1000; // Initialize with random values
+    const int size = 1000;
+    int* arr = (int*)malloc(size * sizeof(int));
+
+    // Seed para o gerador de números aleatórios
+    srand(time(NULL));
+
+    // Gera 1000 números aleatórios entre 1 e 1000
+    for (int i = 0; i < size; ++i) {
+        arr[i] = rand() % 1000 + 1; // Gera números entre 1 e 1000
     }
-    bogo_sort(arr, n);
+
+    // Ordena o array usando Bogo Sort
+    bogo_sort(arr, size);
+
+    // Libera a memória alocada
     free(arr);
+
     return 0;
 }
