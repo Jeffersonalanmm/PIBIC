@@ -26,14 +26,14 @@ void shuffle(int *a, int n)
 
 void sort(int *a, int n)
 {
+    srand(time(NULL));
     while (!check_sorted(a, n)) shuffle(a, n);
 }
 
 int main()
 {
-    int n = 1000;
+    int n = 10;
     int numbers[n];
-    srand(time(NULL));  // Seed para geração de números aleatórios
 
     for (int i = 0; i < n; i++)
     {

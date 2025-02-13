@@ -25,25 +25,23 @@ void shuffle(int *array, int size) {
 
 // Bogo Sort algorithm
 void bogo_sort(int *array, int size) {
+    srand(time(NULL));
     while (!is_sorted(array, size)) {
         shuffle(array, size);
     }
 }
 
 int main() {
-    int size = 1000;
-    int array[size];
+    const int SIZE = 10;
+    int arr[SIZE];
 
-    // Initialize the array with 1000 values
-    for (int i = 0; i < size; i++) {
-        array[i] = rand() % 1000; // Random values between 0 and 999
+    // Fill array with random values
+    for (int i = 0; i < SIZE; i++) {
+        arr[i] = rand() % 1000; // Random values between 0 and 9999
     }
 
-    // Seed the random number generator
-    srand(time(NULL));
-
-    // Sort the array using Bogo Sort
-    bogo_sort(array, size);
+    // Sort the array using bogosort
+    bogo_sort(arr, SIZE);
 
     return 0;
 }

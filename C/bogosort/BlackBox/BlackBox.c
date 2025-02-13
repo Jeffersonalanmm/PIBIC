@@ -25,28 +25,23 @@ void shuffle(int arr[], int n) {
 
 // Bogosort function
 void bogosort(int arr[], int n) {
+    srand(time(NULL));
     while (!isSorted(arr, n)) {
         shuffle(arr, n);
     }
 }
 
 int main() {
-    int n = 1000;
-    int *arr = malloc(n * sizeof(int));
+    const int SIZE = 10;
+    int arr[SIZE];
 
-    // Seed the random number generator
-    srand(time(NULL));
-
-    // Initialize the array with random values
-    for (int i = 0; i < n; i++) {
-        arr[i] = rand() % 10000; // Random values between 0 and 9999
+    // Fill array with random values
+    for (int i = 0; i < SIZE; i++) {
+        arr[i] = rand() % 1000; // Random values between 0 and 9999
     }
 
-    // Sort the array using Bogosort
-    bogosort(arr, n);
-
-    // Free the allocated memory
-    free(arr);
+    // Sort the array using bogosort
+    bogosort(arr, SIZE);
 
     return 0;
 }

@@ -188,7 +188,6 @@ void dijkstra(struct Graph* graph, int src) {
 
     // Print the shortest path tree
     for (int i = 0; i < vertices; i++) {
-        printf("%d\t%d\t\t\t", i, dist[i]);
         
         // Print path
         int j = i;

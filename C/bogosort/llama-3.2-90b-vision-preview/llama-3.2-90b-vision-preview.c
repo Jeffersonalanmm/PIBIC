@@ -41,7 +41,7 @@ void bogo_sort(int arr[], int n) {
 // Example usage
 int main()
 {
-    int n = 1000;
+    int n = 10;
     int numbers[n];
     srand(time(NULL));  // Seed para geração de números aleatórios
 

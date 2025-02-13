@@ -28,16 +28,17 @@ void bogo_sort(int *array, int n) {
 }
 
 int main() {
-    int array[1000];
+    const int SIZE = 10;
+    int arr[SIZE];
 
-    // Populate the array with random values
-    for (int i = 0; i < 1000; i++) {
-        array[i] = rand() % 1000;
+
+    // Fill array with random values
+    for (int i = 0; i < SIZE; i++) {
+        arr[i] = rand() % 1000; // Random values between 0 and 9999
     }
 
-    bogo_sort(array, 1000);
-
-    // (You might want to print the sorted array here for verification)
+    // Sort the array using bogosort
+    bogo_sort(arr, SIZE);
 
     return 0;
 }

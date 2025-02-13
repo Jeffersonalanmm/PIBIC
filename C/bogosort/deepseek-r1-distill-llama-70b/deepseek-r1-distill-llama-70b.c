@@ -20,23 +20,23 @@ void shuffle(int *arr, int n) {
 }
 
 void bogo_sort(int *arr, int n) {
+    srand(time(NULL));
     while (!is_sorted(arr, n)) {
         shuffle(arr, n);
     }
 }
 
-int main()
-{
-    int n = 1000;
-    int numbers[n];
-    srand(time(NULL));  // Seed para geração de números aleatórios
+int main() {
+    const int SIZE = 10;
+    int arr[SIZE];
 
-    for (int i = 0; i < n; i++)
-    {
-        numbers[i] = (rand() % 10000) + 1;  // Gera valores aleatórios entre 0 e 9999
+    // Fill array with random values
+    for (int i = 0; i < SIZE; i++) {
+        arr[i] = rand() % 1000; // Random values between 0 and 9999
     }
 
-    bogo_sort(numbers, n);
+    // Sort the array using bogosort
+    bogo_sort(arr, SIZE);
 
     return 0;
 }

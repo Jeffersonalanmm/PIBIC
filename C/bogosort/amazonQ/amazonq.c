@@ -25,21 +25,19 @@ void shuffle(int arr[], int size) {
 
 // Bogosort implementation
 void bogosort(int arr[], int size) {
+    srand(time(NULL));
     while (!is_sorted(arr, size)) {
         shuffle(arr, size);
     }
 }
 
 int main() {
-    const int SIZE = 1000;
+    const int SIZE = 10;
     int arr[SIZE];
-
-    // Initialize random number generator
-    srand((unsigned)time(NULL));
 
     // Fill array with random values
     for (int i = 0; i < SIZE; i++) {
-        arr[i] = rand() % 10000; // Random values between 0 and 9999
+        arr[i] = rand() % 1000; // Random values between 0 and 9999
     }
 
     // Sort the array using bogosort

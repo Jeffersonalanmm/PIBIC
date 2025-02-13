@@ -26,23 +26,24 @@ void shuffle(int *array, int size) {
 
 // Bogosort algorithm
 void bogosort(int *array, int size) {
+    srand(time(NULL));
     while (!is_sorted(array, size)) {
         shuffle(array, size);
     }
 }
 
 int main() {
-    int array[ARRAY_SIZE];
-    
-    // Initialize the array with 1000 values in reverse order
-    for (int i = 0; i < ARRAY_SIZE; i++) {
-        array[i] = ARRAY_SIZE - i;
+    const int SIZE = 10;
+    int arr[SIZE];
+
+
+    // Fill array with random values
+    for (int i = 0; i < SIZE; i++) {
+        arr[i] = rand() % 1000; // Random values between 0 and 9999
     }
-    
-    srand(time(NULL));
-    
-    // Sort the array using Bogosort
-    bogosort(array, ARRAY_SIZE);
-    
+
+    // Sort the array using bogosort
+    bogosort(arr, SIZE);
+
     return 0;
 }

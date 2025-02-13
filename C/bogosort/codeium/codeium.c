@@ -24,17 +24,24 @@ void shuffle(int* arr, int n) {
 
 // Bogo sort function
 void bogo_sort(int* arr, int n) {
+    srand(time(NULL));
     while (!is_sorted(arr, n)) {
         shuffle(arr, n);
     }
 }
 
 int main() {
-    srand(time(NULL)); // Seed for random number generation
-    int arr[1000];
-    for (int i = 0; i < 1000; i++) {
-        arr[i] = rand() % 1000; // Initialize array with random values
+    const int SIZE = 10;
+    int arr[SIZE];
+
+
+    // Fill array with random values
+    for (int i = 0; i < SIZE; i++) {
+        arr[i] = rand() % 1000; // Random values between 0 and 9999
     }
-    bogo_sort(arr, 1000);
+
+    // Sort the array using bogosort
+    bogo_sort(arr, SIZE);
+
     return 0;
 }

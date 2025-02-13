@@ -29,7 +29,7 @@ void shuffle(int arr[], int n) {
 
 // Bogo Sort function
 void bogo_sort(int arr[], int n) {
-    //srand(time(NULL)); lembrar q fiz isso
+    srand(time(NULL));
     while (!is_sorted(arr, n)) {
         shuffle(arr, n);
     }
@@ -45,9 +45,8 @@ void bogo_sort(int arr[], int n) {
 
 int main()
 {
-    int n = 1000;
+    int n = 10;
     int numbers[n];
-    srand(time(NULL));  // Seed para geração de números aleatórios
 
     for (int i = 0; i < n; i++)
     {

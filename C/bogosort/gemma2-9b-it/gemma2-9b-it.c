@@ -23,12 +23,12 @@ void bogoSort(int arr[], int n) {
 }
 
 int main() {
-    int arr[1000];
-    for (int i = 0; i < 1000; i++) {
+    int arr[10];
+    for (int i = 0; i <= 10; i++) {
         arr[i] = rand() % 1000;
     }
 
-    bogoSort(arr, 1000);
+    bogoSort(arr, 10);
 
     return 0;
 }
