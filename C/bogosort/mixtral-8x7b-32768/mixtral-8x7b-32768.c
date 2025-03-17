@@ -19,7 +19,7 @@ void bogo_sort(int arr[], int n) {
 
 int main()
 {
-    int n = 10;
+    int n = ;5
     int numbers[n];
 
     for (int i = 0; i < n; i++)
