@@ -33,12 +33,12 @@ public class AmazonQ {
     }
 
     public static void main(String[] args) {
-        int[] arr = new int[1000];
+        int[] arr = new int[10];
         Random rand = new Random();
         
-        // Generate 1000 random numbers
+        // Generate 10 random numbers
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = rand.nextInt(10000); // Random numbers between 0 and 9999
+            arr[i] = rand.nextInt(1000); // Random numbers between 0 and 9999
         }
 
         // Sort the array using BogoSort

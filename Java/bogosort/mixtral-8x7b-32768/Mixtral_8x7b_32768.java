@@ -6,7 +6,7 @@ public class Mixtral_8x7b_32768 {
         // Gerar 10 valores aleatórios entre 0 e 10.000
         int[] arr = new int[10];
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = rand.nextInt(10000);  // valores aleatórios entre 0 e 9999
+            arr[i] = rand.nextInt(1000);  // valores aleatórios entre 0 e 9999
         }
 
         // Chamar o algoritmo bogosort para ordenar o array

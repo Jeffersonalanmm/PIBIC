@@ -38,8 +38,8 @@ public class TheAlgorithms {
     }
 
     public static void main(String[] args) {
-        // Gerando 1000 valores aleatórios
-        Integer[] integers = new Integer[1000];
+        // Gerando 10 valores aleatórios
+        Integer[] integers = new Integer[10];
         for (int i = 0; i < integers.length; i++) {
             integers[i] = RANDOM.nextInt(1000); // Números entre 0 e 999
         }

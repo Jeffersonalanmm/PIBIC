@@ -4,10 +4,10 @@ import java.util.Random;
 public class Copilot {
 
     public static void main(String[] args) {
-        int[] array = new int[1000];
+        int[] array = new int[10];
         Random random = new Random();
 
-        // Generate 1000 random values
+        // Generate 10 random values
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(1000);
         }

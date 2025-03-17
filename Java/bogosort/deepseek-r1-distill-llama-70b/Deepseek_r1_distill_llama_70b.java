@@ -52,10 +52,10 @@ public class Deepseek_r1_distill_llama_70b {
     public static void main(String[] args) {
  Random rand = new Random();
         
-        // Gerar um array de 1000 valores aleatórios
+        // Gerar um array de 10 valores aleatórios
         int[] testArray = new int[10];
         for (int i = 0; i < testArray.length; i++) {
-            testArray[i] = rand.nextInt(10000);  // valores aleatórios entre 0 e 9999
+            testArray[i] = rand.nextInt(1000);  // valores aleatórios entre 0 e 9999
         }
 
         // Chamar o algoritmo bogoSort para ordenar o array

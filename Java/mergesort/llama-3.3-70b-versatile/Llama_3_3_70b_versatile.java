@@ -64,9 +64,6 @@ public class Llama_3_3_70b_versatile{
             arr[i] = random.nextInt(10000) + 1; // Números entre 1 e 10000
         }
 
-        System.out.println("Original array:");
-        printArray(arr);
-
         // Ordenando com MergeSort
         arr = mergeSort(arr);
     }

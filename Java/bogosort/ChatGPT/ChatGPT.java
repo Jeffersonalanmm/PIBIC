@@ -30,9 +30,9 @@ public class ChatGPT {
         }
     }
 
-    // Default main method to test Bogosort with 1000 values
+    // Default main method to test Bogosort with 10 values
     public static void main(String[] args) {
-        int size = 1000;  // Size of the array
+        int size = 10;  // Size of the array
         int[] array = new int[size];
         
         // Fill the array with random values

@@ -1,9 +1,6 @@
 compile:
 	javac -d . Llama_3_2_90b_vision_preview.java
 
-measure:
-	sudo ../RAPL/main "/usr/lib/jvm/java-11-openjdk-amd64/bin/java -cp . Llama_3_2_90b_vision_preview 1000" Java Llama_3_2_90b_vision_preview
-
 run:
 	/usr/lib/jvm/java-11-openjdk-amd64/bin/java -cp . Llama_3_2_90b_vision_preview 1000
 

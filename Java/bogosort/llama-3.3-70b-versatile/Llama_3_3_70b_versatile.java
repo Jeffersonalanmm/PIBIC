@@ -56,7 +56,7 @@ public class Llama_3_3_70b_versatile {
         // Gerar 10 valores aleatórios entre 0 e 10.000
         int[] array = new int[10];
         for (int i = 0; i < array.length; i++) {
-            array[i] = rand.nextInt(10000);  // valores aleatórios entre 0 e 9999
+            array[i] = rand.nextInt(1000);  // valores aleatórios entre 0 e 9999
         }
 
         // Chamar o algoritmo bogoSort para ordenar o array

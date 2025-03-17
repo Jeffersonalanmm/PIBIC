@@ -2,8 +2,8 @@ public class Rosetta
 {
     public static void main(String[] args)
     {
-        // Gerando um array de 1000 valores aleatórios
-        int[] arr = new int[1000];
+        // Gerando um array de 10 valores aleatórios
+        int[] arr = new int[10];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = (int) (Math.random() * 1000);  // Números aleatórios entre 0 e 999
         }

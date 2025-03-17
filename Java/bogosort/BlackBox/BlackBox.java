@@ -33,12 +33,12 @@ public class BlackBox {
 
     // Main method to test the Bogosort algorithm
     public static void main(String[] args) {
-        int[] array = new int[1000];
+        int[] array = new int[10];
         Random rand = new Random();
 
         // Fill the array with random integers
         for (int i = 0; i < array.length; i++) {
-            array[i] = rand.nextInt(10000); // Random integers from 0 to 9999
+            array[i] = rand.nextInt(1000); // Random integers from 0 to 9999
         }
 
         // Sort the array using Bogosort

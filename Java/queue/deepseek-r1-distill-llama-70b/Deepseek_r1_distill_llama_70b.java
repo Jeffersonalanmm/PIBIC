@@ -1,5 +1,6 @@
 import java.util.Random;
-public class Queue<T> {
+
+public class Deepseek_r1_distill_llama_70b<T> {
 
     private Node<T> front;
     private Node<T> rear;
@@ -49,12 +50,12 @@ public class Queue<T> {
     }
 
     public static void main(String[] args) {
-        Queue<Integer> queue = new Queue<>();
-        queue.enqueue(1);
-        queue.enqueue(2);
-        queue.enqueue(3);
+        Deepseek_r1_distill_llama_70b<Integer> queue = new Deepseek_r1_distill_llama_70b<>();
+        Random random = new Random();
 
-        System.out.println("Dequeued: " + queue.dequeue());
-        System.out.println("Peek: " + queue.peek());
+        for (int i = 0; i < 1000; i++) {
+            int value = random.nextInt(10000);
+            queue.enqueue(value);
+        }
     }
 }

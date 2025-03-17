@@ -32,7 +32,7 @@ public class Gemma2_9b_it {
         // Gerar 10 valores aleatórios
         int[] arr = new int[10];
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = rand.nextInt(10000);  // valores aleatórios entre 0 e 9999
+            arr[i] = rand.nextInt(1000);  // valores aleatórios entre 0 e 9999
         }
 
         // Chamar o algoritmo bogoSort para ordenar o array

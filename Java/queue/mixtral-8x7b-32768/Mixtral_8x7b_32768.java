@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
 public class Mixtral_8x7b_32768<T> {
-    private Mixtral_8x7b_32768<T> queue = new LinkedList<T>();
+    private Queue<T> queue = new LinkedList<T>();
 
     public void enqueue(T item) {
         queue.add(item);
@@ -20,7 +20,7 @@ public class Mixtral_8x7b_32768<T> {
         return queue.size();
     }
 
-        public static void main(String[] args) {
+    public static void main(String[] args) {
         Mixtral_8x7b_32768<Integer> queue = new Mixtral_8x7b_32768<>();
         Random random = new Random();
 
@@ -29,5 +29,5 @@ public class Mixtral_8x7b_32768<T> {
             int value = random.nextInt(10000); // Números aleatórios de 0 a 9999
             queue.enqueue(value);
         }
-        }
+    }
 }
