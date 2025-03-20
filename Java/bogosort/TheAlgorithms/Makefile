@@ -2,6 +2,7 @@ compile:
 	javac -d . TheAlgorithms.java
 
 measure:
+	sudo modprobe msr
 	sudo ../RAPL/main "/usr/lib/jvm/java-11-openjdk-amd64/bin/java -cp . bogosort.TheAlgorithms.TheAlgorithms 10" Java TheAlgorithms
 
 run:

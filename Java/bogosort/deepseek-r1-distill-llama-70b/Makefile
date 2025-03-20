@@ -2,6 +2,7 @@ compile:
 	javac -d . Deepseek_r1_distill_llama_70b.java
 
 measure:
+	sudo modprobe msr
 	sudo ../RAPL/main "/usr/lib/jvm/java-11-openjdk-amd64/bin/java -cp . Deepseek_r1_distill_llama_70b 10" Java Deepseek_r1_distill_llama_70b
 
 run:

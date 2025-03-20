@@ -2,6 +2,7 @@ compile:
 	javac -d . Gemini.java
 
 measure:
+	sudo modprobe msr
 	sudo ../RAPL/main "/usr/lib/jvm/java-11-openjdk-amd64/bin/java -cp . bogosort.Gemini.Gemini 10" Java Gemini
 
 run:

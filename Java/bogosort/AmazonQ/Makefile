@@ -2,6 +2,7 @@ compile:
 	javac -d . AmazonQ.java
 
 measure:
+	sudo modprobe msr
 	sudo ../RAPL/main "/usr/lib/jvm/java-11-openjdk-amd64/bin/java -cp . bogosort.AmazonQ.AmazonQ 10" Java AmazonQ
 
 run:
