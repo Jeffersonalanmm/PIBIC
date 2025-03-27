@@ -12,10 +12,10 @@ chat_completion = client.chat.completions.create(
     messages=[
         {
             "role": "user",
-            "content": "Please write your best implementation of Bogo Sort algorithm in C programming language.",
+            "content": "Please write your best implementation of beadsort algorithm in Python programming language.",
         }
     ],
-    model="llama-3.3-70b-versatile",
+    model="mixtral-8x7b-32768",
     temperature = 0,
 )
 

@@ -12,8 +12,8 @@ def bogosort(data):
 
 def main():
     # Generate 1000 random values
-    data = [random.randint(0, 10000) for _ in range(1000)]
-    sorted_data = bogosort(data)
+    data = [random.randint(0, 10000) for _ in range(10)]
+    bogosort(data)
 
 if __name__ == "__main__":
     main()

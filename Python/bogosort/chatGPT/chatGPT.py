@@ -13,7 +13,7 @@ def bogosort(arr):
 # Default main function
 if __name__ == "__main__":
     # Generate a list of 1000 random values
-    arr = [random.randint(1, 1000) for _ in range(1000)]
+    arr = [random.randint(1, 1000) for _ in range(10)]
     
     # Perform bogosort
     bogosort(arr)
