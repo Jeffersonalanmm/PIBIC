@@ -78,7 +78,7 @@ class node(comparer):
         _parent = self.parent
         x = self.left
         self.parent = x
-        x.parent = _parent;
+        x.parent = _parent
         if x.right is not None:
             x.right.parent = self
         self.left = x.right
@@ -90,7 +90,7 @@ class node(comparer):
        _left = self.left
 
        if _left is None:
-          return self;
+          return self
        
        if _left.balance == state.left_high:
                 self.balance = state.balanced
@@ -104,8 +104,8 @@ class node(comparer):
                 elif subright.balance == state.right_high:
                         self.balance = state.balanced
                         _left.balance = state.left_high
-                elif subright.balance == left_high:
-                        root.balance = state.right_high
+                elif subright.balance == state.left_high:
+                        self.balance = state.right_high
                         _left.balance = state.balanced
                 subright.balance = state.balanced
                 _left = _left.rotate_left()
@@ -115,21 +115,21 @@ class node(comparer):
                self.balance = state.left_high
                _left.balance = state.right_high
                self = self.rotate_right()
-       return self;
+       return self
    
     def balance_right(self):
 
        _right = self.right
 
        if _right is None:
-          return self;
+          return self
        
        if _right.balance == state.right_high:
                 self.balance = state.balanced
                 _right.balance = state.balanced
                 self = self.rotate_left()
        elif _right.balance == state.left_high:
-                subleft = _right.left;
+                subleft = _right.left
                 if subleft.balance == state.balanced:
                         self.balance = state.balanced
                         _right.balance = state.balanced
@@ -153,11 +153,11 @@ class node(comparer):
     def balance_tree(self, direct):
         taller = True
         while taller:
-            _parent = self.parent;
+            _parent = self.parent
             if _parent.left == self:
                 next_from =  direction.from_left
             else:
-                next_from = direction.from_right;
+                next_from = direction.from_right
 
             if direct == direction.from_left:
                 if self.balance == state.left_high:
@@ -204,12 +204,12 @@ class node(comparer):
     def balance_tree_remove(self, _from):
       
         if self.is_header():
-            return;
+            return
 
-        shorter = True;
+        shorter = True
 
         while shorter:
-            _parent = self.parent;
+            _parent = self.parent
             if _parent.left == self:
                 next_from = direction.from_left
             else:
@@ -220,7 +220,7 @@ class node(comparer):
                         shorter = True
  
                 elif self.balance == state.balanced:
-                        self.balance = state.right_high;
+                        self.balance = state.right_high
                         shorter = False
   
                 elif self.balance == state.right_high:
@@ -230,12 +230,12 @@ class node(comparer):
                             else:
                                 shorter = True
                         else:
-                            shorter = False;
+                            shorter = False
 
                         if _parent.is_header():
                             _parent.parent = _parent.parent.balance_right()
                         elif _parent.left == self:
-                            _parent.left = _parent.left.balance_right();
+                            _parent.left = _parent.left.balance_right()
                         else:
                             _parent.right = _parent.right.balance_right()
             
@@ -256,14 +256,14 @@ class node(comparer):
                             else:
                                 shorter = True
                         else:
-                           short = False;
+                           short = False
 
                         if _parent.is_header():
-                            _parent.parent = _parent.parent.balance_left();
+                            _parent.parent = _parent.parent.balance_left()
                         elif _parent.left == self:
-                            _parent.left = _parent.left.balance_left();
+                            _parent.left = _parent.left.balance_left()
                         else:
-                            _parent.right = _parent.right.balance_left();
+                            _parent.right = _parent.right.balance_left()
  
             if shorter:
                if _parent.is_header():
@@ -283,7 +283,7 @@ class node(comparer):
             return y
          
         else: 
-            y = self.parent;
+            y = self.parent
             if y.is_header():
                 return y
 
@@ -302,17 +302,17 @@ class node(comparer):
             y = self.right
             while y.left is not None:
                 y = y.left
-            return y;
+            return y
          
         else:
             y = self.parent
             if y.is_header():
                 return y
 
-            x = self;         
+            x = self         
             while x == y.right:
                 x = y
-                y = y.parent;
+                y = y.parent
                 
             return y
 
@@ -332,7 +332,7 @@ class node(comparer):
                 if a.parent.left == a:
                     a.parent.left = b
                 else:
-                    a.parent.right = b;
+                    a.parent.right = b
             else:
                 a.parent.parent = b
 
@@ -375,18 +375,15 @@ class node(comparer):
         elif a == b.left:
             if a.left is not None:
                 a.left.parent = b
-                
+
             if a.right is not None:
                 a.right.parent = b
 
             if b.right is not None:
                 b.right.parent = a
 
-            if not parent.is_header(): 
-                if b.parent.left == b:
-                    b.parent.left = a
-                else:
-                    b.parent.right = a
+            if not b.parent.is_header():
+                b.parent.left = a
             else:
                 b.parent.parent = a
 
@@ -399,7 +396,8 @@ class node(comparer):
             temp = a.right
             a.right = b.right
             b.right = temp
-        elif a == b.right:
+
+        elif a == b.right: 
             if a.right is not None:
                 a.right.parent = b
             if a.left is not None:
@@ -519,10 +517,10 @@ class ordered_set:
         while (first1 != last1) and (first2 != last2):
            l =  first1.key < first2.key
            if not l: 
-              first1 = first1.next();
-              first2 = first2.next();
+              first1 = first1.next()
+              first2 = first2.next()
            else:
-              return True;
+              return True
   
         a = self.__len__()
         b = other.__len__()
@@ -755,7 +753,7 @@ class ordered_set:
                             return
                     
     def remove(self,data):
-        root = self.header.parent;
+        root = self.header.parent
 
         while True:
             if root is None:
@@ -764,10 +762,10 @@ class ordered_set:
             c  = root.compare(data)
 
             if c < 0:
-               root = root.left;
+               root = root.left
 
             elif c > 0:
-               root = root.right;
+               root = root.right
 
             else:
                  
@@ -787,7 +785,7 @@ class ordered_set:
 
                  if self.header.left == root:
                                 
-                     n = root.next();
+                     n = root.next()
                  
                      if n.is_header():
                          self.header.left = self.header
@@ -796,7 +794,7 @@ class ordered_set:
                         self.header.left = n
                  elif self.header.right == root: 
 
-                     p = root.previous();
+                     p = root.previous()
 
                      if p.is_header():
                           self.header.left = self.header
@@ -824,26 +822,26 @@ class ordered_set:
                          _parent.right = root.left
 
                      if root.left is not None:
-                         root.left.parent = _parent;
+                         root.left.parent = _parent
 
 
                  _parent.balance_tree_remove(_from)
                  return   
 
     def contains(self,data):
-        root = self.header.parent;
+        root = self.header.parent
 
         while True:
             if root == None:
                 return False
 
-            c  = root.compare(data);
+            c  = root.compare(data)
 
             if c > 0:
-               root = root.left;
+               root = root.left
 
             elif c < 0:
-               root = root.right;
+               root = root.right
 
             else:
            
@@ -851,23 +849,23 @@ class ordered_set:
 
    
     def find(self,data):
-        root = self.header.parent;
+        root = self.header.parent
 
         while True:
             if root == None:
                 raise entry_not_found("An entry is not found in a collection")
 
-            c  = root.compare(data);
+            c  = root.compare(data)
 
             if c > 0:
-               root = root.left;
+               root = root.left
 
             elif c < 0:
-               root = root.right;
+               root = root.right
 
             else:
            
-                 return root.key;  
+                 return root.key  
             
 class key_value(comparer):
 
@@ -904,10 +902,10 @@ class dictionary:
 
     def __lt__(self, other):
        if self.keys() < other.keys():
-          return true
+          return True
 
        if other.keys() < self.keys():
-          return false
+          return False
          
        first1 = self.set.header.left
        last1 = self.set.header
@@ -917,10 +915,10 @@ class dictionary:
        while (first1 != last1) and (first2 != last2):
           l =  first1.key.value < first2.key.value
           if not l: 
-             first1 = first1.next();
-             first2 = first2.next();
+             first1 = first1.next()
+             first2 = first2.next()
           else:
-             return True;
+             return True
   
        a = self.__len__()
        b = other.__len__()
@@ -968,10 +966,10 @@ class dictionary:
         return self.set.header.parent.length()
 
     def __str__(self):
-       l = self.set.header.right;
+       l = self.set.header.right
        s = "{"
-       i = self.set.header.left;
-       h = self.set.header;
+       i = self.set.header.left
+       h = self.set.header
        while i != h:
            s = s + "("
            s = s + i.key.key.__str__()
@@ -983,7 +981,7 @@ class dictionary:
            i = i.next()
 
        s = s + "}"
-       return s;
+       return s
 
     def __iter__(self):
        
@@ -1047,7 +1045,7 @@ class array:
        self.dictionary.sort()
 
     def clear(self):
-      self.dictionary.header = node();
+      self.dictionary.header = node()
       
 
     def __iter__(self):
@@ -1079,10 +1077,10 @@ class array:
        return self.dictionary < other.dictionary
  
     def __str__(self):
-       l = self.dictionary.set.header.right;
+       l = self.dictionary.set.header.right
        s = "{"
-       i = self.dictionary.set.header.left;
-       h = self.dictionary.set.header;
+       i = self.dictionary.set.header.left
+       h = self.dictionary.set.header
        while i != h:
            s = s + i.key.value.__str__()
            if i != l:
@@ -1090,7 +1088,7 @@ class array:
            i = i.next()
 
        s = s + "}"
-       return s;
+       return s
           
 
 class bag:
@@ -1112,10 +1110,10 @@ class bag:
         return self.node.key
 
     def __str__(self):
-       l = self.header.right;
+       l = self.header.right
        s = "("
-       i = self.header.left;
-       h = self.header;
+       i = self.header.left
+       h = self.header
        while i != h:
            s = s + i.key.__str__()
            if i != l:
@@ -1123,7 +1121,7 @@ class bag:
            i = i.next()
 
        s = s + ")"
-       return s;
+       return s
 
     def __len__(self):
         return self.header.parent.length()
@@ -1171,28 +1169,28 @@ class bag:
  
     def remove_first(self,data):
        
-        root = self.header.parent;
+        root = self.header.parent
 
         while True:
             if root is None:
-                return False;
+                return False
 
-            c  = root.compare(data);
+            c  = root.compare(data)
 
             if c > 0:
-               root = root.left;
+               root = root.left
 
             elif c < 0:
-               root = root.right;
+               root = root.right
 
             else:
                  
                  if root.left is not None:
                      if root.right is not None: 
-                         replace = root.left;
+                         replace = root.left
                          while replace.right is not None:
-                             replace = replace.right;
-                         root.swap_nodes(replace);
+                             replace = replace.right
+                         root.swap_nodes(replace)
                          
                  _parent = root.parent
 
@@ -1203,16 +1201,16 @@ class bag:
 
                  if self.header.left == root:
                                 
-                     n = root.next();
+                     n = root.next()
                  
                      if n.is_header():
                          self.header.left = self.header
                          self.header.right = self.header
                      else:
-                        self.header.left = n;
+                        self.header.left = n
                  elif self.header.right == root: 
 
-                     p = root.previous();
+                     p = root.previous()
 
                      if p.is_header():
                           self.header.left = self.header
@@ -1240,11 +1238,11 @@ class bag:
                          _parent.right = root.left
 
                      if root.left is not None:
-                         root.left.parent = _parent;
+                         root.left.parent = _parent
 
 
                  _parent.balance_tree_remove(_from)
-                 return True;
+                 return True
 
     def remove(self,data):
        success = self.remove_first(data)
@@ -1259,7 +1257,7 @@ class bag:
                replace = replace.right
             root.swap_nodes(replace)
 
-        parent = root.parent;
+        parent = root.parent
 
         if parent.left == root:
            next_from = direction.from_left
@@ -1270,7 +1268,7 @@ class bag:
             n = root.next()
 
             if n.is_header():
-                self.header.left = self.header;
+                self.header.left = self.header
                 self.header.right = self.header
             else:
                 self.header.left = n
@@ -1279,7 +1277,7 @@ class bag:
 
              if p.is_header(): 
                 root.header.left = root.header
-                root.header.right = header
+                root.header.right = self.header
              else:
                 self.header.right = p
 
@@ -1302,13 +1300,13 @@ class bag:
                 parent.right = root.left
 
             if root.left != None:
-               root.left.parent = parent;
+               root.left.parent = parent
 
         parent.balance_tree_remove(next_from)
     
     def remove_at(self, data, ophset):
  
-            p = self.search(data);
+            p = self.search(data)
 
             if p == None:
                 return
@@ -1319,8 +1317,8 @@ class bag:
             s = 0
             while True:
                 if ophset == s:
-                    remove_node(lower);
-                    return;
+                    self.remove_node(lower)
+                    return
                 lower = lower.next_node()
                 if after == lower:
                    break
@@ -1329,7 +1327,7 @@ class bag:
             return
 
     def search(self, key):
-        s = before(key)
+        s = self.before(key)
         s.next()
         if s.is_header():
            return None
@@ -1340,20 +1338,20 @@ class bag:
     
   
     def before(self, data):
-        y = self.header;
-        x = self.header.parent;
+        y = self.header
+        x = self.header.parent
 
-        while x != None:
+        while x is not None:
             if x.compare(data) >= 0:
-                x = x.left;
+                x = x.left
             else:
-                y = x;
-                x = x.right;
+                y = x
+                x = x.right
         return y
     
     def after(self, data):
-        y = self.header;
-        x = self.header.parent;
+        y = self.header
+        x = self.header.parent
 
         while x != None:
             if x.compare(data) > 0:
@@ -1362,17 +1360,17 @@ class bag:
             else:
                 x = x.right
 
-        return y;
+        return y
     
  
     def find(self,data):
-        root = self.header.parent;
+        root = self.header.parent
 
         results = array()
         
         while True:
             if root is None:
-                break;
+                break
 
             p = self.before(data)
             p = p.next()
@@ -1385,7 +1383,7 @@ class bag:
          
                return results
             else:
-               break;
+               break
             
         return results
     
@@ -1414,10 +1412,10 @@ class bag_dictionary:
         return self.bag.header.parent.length()
 
     def __str__(self):
-       l = self.bag.header.right;
+       l = self.bag.header.right
        s = "{"
-       i = self.bag.header.left;
-       h = self.bag.header;
+       i = self.bag.header.left
+       h = self.bag.header
        while i != h:
            s = s + "("
            s = s + i.key.key.__str__()
@@ -1429,7 +1427,7 @@ class bag_dictionary:
            i = i.next()
 
        s = s + "}"
-       return s;
+       return s
 
     def __iter__(self):
        
@@ -1474,7 +1472,7 @@ class unordered_set:
         for u in other:
            if self.contains(u):
               return False
-        return true;
+        return True
 
     def __ne__(self, other):
         return not self == other
@@ -1483,11 +1481,11 @@ class unordered_set:
        r = unordered_set()
        
        for t in self:
-          r.add(t);
+          r.add(t)
           
        for u in other:
           if not self.contains(u):
-             r.add(u);
+             r.add(u)
 
        return r
 
@@ -1500,7 +1498,7 @@ class unordered_set:
               
        for u in other:
               if self.contains(u) and not r.contains(u):
-                  r.add(u);
+                  r.add(u)
   
        return r
 
@@ -1523,7 +1521,7 @@ class unordered_set:
        
        for t in self:
           if not other.contains(t):
-             r.add(t);
+             r.add(t)
              
        return r
  
@@ -1561,13 +1559,13 @@ class unordered_set:
 
     def contains(self, data):
             if self.bag_dictionary.bag.header.parent == None:
-                return False;
+                return False
             else:
-                index = hash(data);
+                index = hash(data)
 
-                _search = self.bag_dictionary.bag.header.parent;
+                _search = self.bag_dictionary.bag.header.parent
 
-                search_index =  _search.key.key;
+                search_index =  _search.key.key
 
                 if index < search_index:
                    _search = _search.left
@@ -1579,7 +1577,7 @@ class unordered_set:
                     return False
 
                 while _search != None:
-                    search_index =  _search.key.key;
+                    search_index =  _search.key.key
 
                     if index < search_index:
                        _search = _search.left
@@ -1601,7 +1599,7 @@ class unordered_set:
         save = _node
 
         while not previous.is_header() and previous.key.key == _node.key.key:
-            save = previous;
+            save = previous
             previous = previous.previous()
       
         c = _node.key.value
@@ -1614,10 +1612,10 @@ class unordered_set:
             _node = next
             c = _node.key.value
             if c == data:
-               return True;
+               return True
             next = _node.next()
  
-        return False;
+        return False
       
     def find(self,data,_node):
        
@@ -1625,10 +1623,10 @@ class unordered_set:
         save = _node
 
         while not previous.is_header() and previous.key.key == _node.key.key:
-            save = previous;
-            previous = previous.previous();
+            save = previous
+            previous = previous.previous()
  
-        _node = save;
+        _node = save
         c = _node.key.value
         if c == data:
            return _node
@@ -1654,10 +1652,10 @@ class unordered_set:
             c = _search.key.key
 
             if index < c:
-               _search = _search.left;
+               _search = _search.left
 
             elif index > c:
-               _search = _search.right;
+               _search = _search.right
 
             while _search != None:
 
@@ -1667,10 +1665,10 @@ class unordered_set:
                 c = _search.key.key
 
                 if index < c:
-                   _search = _search.left;
+                   _search = _search.left
 
                 elif index > c:
-                   _search = _search.right;
+                   _search = _search.right
 
                 else:
                    break
@@ -1681,9 +1679,9 @@ class unordered_set:
             return self.find(data, _search)
 
     def remove(self,data):
-       found = self.search(data);
+       found = self.search(data)
        if found != None:
-          self.bag_dictionary.bag.remove_node(found);
+          self.bag_dictionary.bag.remove_node(found)
        else:
           raise entry_not_found("Entry not found in the unordered set")
  
@@ -1691,10 +1689,10 @@ class unordered_set:
        self.bag_dictionary.bag.header = node()
 
     def __str__(self):
-       l = self.bag_dictionary.bag.header.right;
+       l = self.bag_dictionary.bag.header.right
        s = "{"
-       i = self.bag_dictionary.bag.header.left;
-       h = self.bag_dictionary.bag.header;
+       i = self.bag_dictionary.bag.header.left
+       h = self.bag_dictionary.bag.header
        while i != h:
            s = s + i.key.value.__str__()
            if i != l:
@@ -1702,7 +1700,7 @@ class unordered_set:
            i = i.next()
 
        s = s + "}"
-       return s;
+       return s
 
     def __iter__(self):
        
@@ -1741,10 +1739,10 @@ class map:
        self.set.clear()
 
     def __str__(self):
-       l = self.set.bag_dictionary.bag.header.right;
+       l = self.set.bag_dictionary.bag.header.right
        s = "{"
-       i = self.set.bag_dictionary.bag.header.left;
-       h = self.set.bag_dictionary.bag.header;
+       i = self.set.bag_dictionary.bag.header.left
+       h = self.set.bag_dictionary.bag.header
        while i != h:
            s = s + "("
            s = s + i.key.value.key.__str__()
@@ -1756,7 +1754,7 @@ class map:
            i = i.next()
 
        s = s + "}"
-       return s;
+       return s
 
     def __iter__(self):
        
