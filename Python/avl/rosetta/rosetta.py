@@ -104,8 +104,8 @@ class node(comparer):
                 elif subright.balance == state.right_high:
                         self.balance = state.balanced
                         _left.balance = state.left_high
-                elif subright.balance == left_high:
-                        root.balance = state.right_high
+                elif subright.balance == state.left_high:
+                        self.balance = state.right_high
                         _left.balance = state.balanced
                 subright.balance = state.balanced
                 _left = _left.rotate_left()
@@ -375,18 +375,15 @@ class node(comparer):
         elif a == b.left:
             if a.left is not None:
                 a.left.parent = b
-                
+
             if a.right is not None:
                 a.right.parent = b
 
             if b.right is not None:
                 b.right.parent = a
 
-            if not parent.is_header(): 
-                if b.parent.left == b:
-                    b.parent.left = a
-                else:
-                    b.parent.right = a
+            if not b.parent.is_header():
+                b.parent.left = a
             else:
                 b.parent.parent = a
 
@@ -399,7 +396,8 @@ class node(comparer):
             temp = a.right
             a.right = b.right
             b.right = temp
-        elif a == b.right:
+
+        elif a == b.right: 
             if a.right is not None:
                 a.right.parent = b
             if a.left is not None:
@@ -904,10 +902,10 @@ class dictionary:
 
     def __lt__(self, other):
        if self.keys() < other.keys():
-          return true
+          return True
 
        if other.keys() < self.keys():
-          return false
+          return False
          
        first1 = self.set.header.left
        last1 = self.set.header
@@ -1279,7 +1277,7 @@ class bag:
 
              if p.is_header(): 
                 root.header.left = root.header
-                root.header.right = header
+                root.header.right = self.header
              else:
                 self.header.right = p
 
@@ -1319,7 +1317,7 @@ class bag:
             s = 0
             while True:
                 if ophset == s:
-                    remove_node(lower)
+                    self.remove_node(lower)
                     return
                 lower = lower.next_node()
                 if after == lower:
@@ -1329,7 +1327,7 @@ class bag:
             return
 
     def search(self, key):
-        s = before(key)
+        s = self.before(key)
         s.next()
         if s.is_header():
            return None
@@ -1343,7 +1341,7 @@ class bag:
         y = self.header
         x = self.header.parent
 
-        while x != None:
+        while x is not None:
             if x.compare(data) >= 0:
                 x = x.left
             else:
@@ -1474,7 +1472,7 @@ class unordered_set:
         for u in other:
            if self.contains(u):
               return False
-        return true
+        return True
 
     def __ne__(self, other):
         return not self == other
